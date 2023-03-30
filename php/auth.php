@@ -3,6 +3,10 @@
 if (isset($_POST['email'])&&
 isset($_POST['password'])){
 
+    #Database Connection file
+    include "../db_conn.php";
+
+    #Validationi helper function
     include "func-validation.php"; 
 
 
@@ -19,9 +23,28 @@ isset($_POST['password'])){
     $ms = "error";
     is_empty($password , $text, $location, $ms, "");
 
+#search for thr email
+$sql = "SELECT * FROM admin WHERE email =?";
 
-    
+$stmt = $conn->prepare($sql);
+$stmt ->execute([$email]);
 
+#if the email already exists
+if($stmt->rowCount()=== 1){
+    $user = $stmt->fetch();
+
+    $user_id = $user['id'];
+    $user_email = $user['email'];
+    $user_pasword = $user['password'];
+}else{
+    #error message
+    $em = "Incorrect Username or Password";
+    header("Location: ../login.php?error=$em");
+}
+
+}else{
+    #Redirect to login
+    header("Location: ../login.php");
 }
 
 
