@@ -36,6 +36,20 @@ if($stmt->rowCount()=== 1){
     $user_id = $user['id'];
     $user_email = $user['email'];
     $user_pasword = $user['password'];
+    if ($email === $user_email){
+        if(password_verify($password, $user_pasword)){
+            echo "okay!";
+        }else{
+            #error message
+            $em = "Incorrect Username or Password";
+            header("Location: ../login.php?error=$em");
+        }
+        
+    }else{
+        #error message
+        $em = "Incorrect Username or Password";
+        header("Location: ../login.php?error=$em");
+    }
 }else{
     #error message
     $em = "Incorrect Username or Password";
