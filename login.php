@@ -15,22 +15,41 @@
     <div class="d-flex justify-content-center align-item-center"
          style="min-height: 100vh;">
         <form class="p-5 rounded shadow" 
-         style="max-width: 30rem ; width: 100% " >
-         <h1 class="text-center" >LOGIN</h1>
+         style="max-width: 30rem ; width: 100% " 
+         method="POST"
+         action="php/auth.php">
+
+         <h1 class="text-center display-4 pb-5" >LOGIN</h1>
+         <?php if(isset($_GET['error'])) {?>
+         <div class="alert alert-danger" role="alert">
+            <?=htmlspecialchars($_GET['error']);?>
+            
+        </div>
+        <?php } ?>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
+            <label for="exampleInputEmail1"
+                 class="form-label">Email address</label>
+            <input type="email" 
+                    class="form-control"
+                    name="email"
+                    id="exampleInputEmail1" 
+                    aria-describedby="emailHelp">
+           
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" 
+            class="form-label">Password</label>
+            <input type="password" 
+            name="password"
+            class="form-control" 
+            id="exampleInputPassword1">
         </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+    
+        <button type="submit" 
+        class="btn btn-primary">
+        Submit</button>
+        <a href="index.php">Store</a>
+
+        
     </form>
     </div>
         
