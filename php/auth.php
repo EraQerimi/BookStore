@@ -42,7 +42,7 @@ if($stmt->rowCount()=== 1){
         }else{
             #error message
             $em = "Incorrect Username or Password";
-            header("Location: ../login.php?error=$em");
+            header("Location: ../admin.php");
         }
         
     }else{
