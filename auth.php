@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 if (isset($_POST['email'])&&
 isset($_POST['password'])){
@@ -38,7 +39,9 @@ if($stmt->rowCount()=== 1){
     $user_pasword = $user['password'];
     if ($email === $user_email){
         if(password_verify($password, $user_pasword)){
-            echo "okay!";
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['user_email'] = $user_email;
+            header("Location: ../admin.php");
         }else{
             #error message
             $em = "Incorrect Username or Password";
