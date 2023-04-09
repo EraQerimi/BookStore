@@ -4,8 +4,19 @@ session_start();
 #if the admin is logged in
 if(isset($_SESSION['user_id']) &&
    isset($_SESSION['user_email'])){
- 
 
+    include "db_conn.php";
+ 
+    include "php/func-book.php";
+    $books = get_all_books($conn);
+
+    include "php/func-author.php";
+    $authors = get_all_author($conn);
+
+    print_r($authors);
+
+
+   
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +60,9 @@ if(isset($_SESSION['user_id']) &&
                 </div>
             </div>
         </nav>
+        <?php if($books == 0){ ?>
+                empty 
+       <?php } else { ?>
     <h4>All Books</h4>
     <table class="table table-bordered shadow">
         <thead>
@@ -62,13 +76,13 @@ if(isset($_SESSION['user_id']) &&
             </tr>
         </thead>
         <tbody>
+            <?php foreach($books as $book) {?>
             <tr>  
             <td>1</td>
-            <td>hello world</td>
-            <td>john doe</td>
-            <td>Lorem ipsum, 
-                dolor sit amet consectetur adipisicing elit. </td>
-            <td>programming</td>
+            <td><?=$book['title']?></td>
+            <td><?=$book['author_id']?></td>
+            <td><?=$book['description']?> </td>
+            <td><?=$book['category_id']?></td>
             <td>
                 
                 <a href="#"
@@ -80,9 +94,10 @@ if(isset($_SESSION['user_id']) &&
                    Delete</a>
             </td>
         </tr>
-         
+        <?php }  ?>
         </tbody>
     </table>
+    <?php } ?>
     </div>
 </body>
 </html>
