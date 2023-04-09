@@ -49,7 +49,39 @@ if(isset($_SESSION['user_id']) &&
                 </div>
             </div>
         </nav>
+    <h4>All Books</h4>
+    <table class="table table-bordered shadow">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>  
+            <td>1</td>
+            <td>hello world</td>
+            <td>john doe</td>
+            <td>Lorem ipsum, 
+                dolor sit amet consectetur adipisicing elit. </td>
+            <td>programming</td>
+            <td>
+                <a href="#"
+                   class="btn btn-warning">
+                   Edit</a>
 
+                <a href="#"
+                   class="btn btn-danger">
+                   Delete</a>
+            </td>
+        </tr>
+         
+        </tbody>
+    </table>
     </div>
 </body>
 </html>
