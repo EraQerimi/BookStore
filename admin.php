@@ -5,17 +5,22 @@ session_start();
 if(isset($_SESSION['user_id']) &&
    isset($_SESSION['user_email'])){
 
+    #Database connection file
     include "db_conn.php";
- 
+    
+    # Book helper function
     include "php/func-book.php";
     $books = get_all_books($conn);
 
+    # Author helper function
     include "php/func-author.php";
     $authors = get_all_author($conn);
 
-    print_r($authors);
+    # Category helper function
+    include "php/func-category.php";
+    $categories = get_all_categories($conn);
 
-
+    // print_r($categories);
    
 ?>
 
@@ -63,7 +68,8 @@ if(isset($_SESSION['user_id']) &&
         <?php if($books == 0){ ?>
                 empty 
        <?php } else { ?>
-    <h4>All Books</h4>
+       <!-- List of All Books -->
+    <h4 class="mt-5" >All Books</h4>
     <table class="table table-bordered shadow">
         <thead>
             <tr>
@@ -76,28 +82,123 @@ if(isset($_SESSION['user_id']) &&
             </tr>
         </thead>
         <tbody>
-            <?php foreach($books as $book) {?>
+            <?php
+            $i=0;
+            foreach($books as $book) {
+            $i++;
+            ?>
             <tr>  
-            <td>1</td>
-            <td><?=$book['title']?></td>
-            <td><?=$book['author_id']?></td>
-            <td><?=$book['description']?> </td>
-            <td><?=$book['category_id']?></td>
+            <td><?=$i?></td>
             <td>
-                
-                <a href="#"
-                   class="btn btn-warning">
-                   Edit</a>
-
-                <a href="#"
-                   class="btn btn-danger">
-                   Delete</a>
+                <img width="100" src="uploads/cover/<?=$book['cover']?>" >
+                    <a class="link-dark d-block text-center"
+                        href="uploads/files/<?=$book['file']?>">
+                        <?=$book['title']?>
+                    </a>
+                </td>
+            <td>
+                <?php 
+                    if($authors == 0){
+                        echo "Undefined";
+                    }else{
+                        foreach ($authors as $author){
+                            if($author['id'] == $book['author_id']){
+                                echo $author['name'];
+                            }
+                        }
+                    }
+                ?>
+            </td>
+            <td><?=$book['description']?> </td>
+            <td>
+                <?php 
+                    if($categories == 0){
+                        echo "Undefined";
+                    }else{
+                        foreach ($categories as $category){
+                            if($category['id'] == $book['category_id']){
+                                echo $category['name'];
+                            }
+                        }
+                    }
+                ?>
+            </td>
+            <td>
+                <a href="#" class="btn btn-warning">Edit</a>
+                <a href="#" class="btn btn-danger"> Delete</a>
             </td>
         </tr>
         <?php }  ?>
         </tbody>
     </table>
     <?php } ?>
+        
+        <?php if($categories == 0){ ?>
+                empty 
+        <?php } else { ?>
+        <!-- List of All categories -->
+        <h4 class="mt-5" >All Categories</h4>
+        <table class="table table-bordered shadow" >
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Category Name</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                $j=0;
+                foreach($categories as $category){
+                $j++;
+                ?>
+                <tr>
+                    <td><?=$j?></td>
+                    <td><?=$category['name']?></td>
+                    <td>
+                            <a href="#" class="btn btn-warning">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                <?php  } ?>
+            </tbody>
+        </table>
+        <?php } ?>
+
+        <?php if($authors == 0){ ?>
+                empty 
+        <?php } else { ?>
+        <!-- List of All authors -->
+        <h4 class="mt-5" >All Authors</h4>
+        <table class="table table-bordered shadow" >
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Author Name</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                $k=0;
+                foreach($authors as $author){
+                $k++;
+                ?>
+                <tr>
+                    <td><?=$k?></td>
+                    <td><?=$author['name']?></td>
+                    <td>
+                            <a href="#" class="btn btn-warning">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                <?php  } ?>
+            </tbody>
+        </table>
+
+        <?php } ?>
     </div>
 </body>
 </html>
