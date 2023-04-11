@@ -45,8 +45,8 @@
         </div>
     
         <button type="submit" 
-        class="btn btn-primary">
-        Submit</button>
+               class="btn btn-primary">
+               Login</button>
         <a href="index.php">Store</a>
 
         

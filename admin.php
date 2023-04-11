@@ -51,13 +51,13 @@ if(isset($_SESSION['user_id']) &&
                             <a class="nav-link" aria-current="page" href="index.php">Store</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Add Book</a>
+                            <a class="nav-link" href="add-book.php">Add Book</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Add Category</a>
+                            <a class="nav-link" href="add-category.php">Add Category</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Add Author</a>
+                            <a class="nav-link" href="add-author.php">Add Author</a>
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">Logout</a>
                         </li>
