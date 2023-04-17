@@ -8,25 +8,25 @@ if(isset($_SESSION['user_id']) &&
         #Database connection file
         include "../db_conn.php";
   
-    /* check if author
+    /* check if category
        name is submitted
        **/
 
-    if(isset($_POST['author_name'])){
+    if(isset($_POST['category_name'])){
         /*
          Get data from POST request
          and store it in var 
          **/
-        $name = $_POST['author_name'];
+        $name = $_POST['category_name'];
 
         #simple from Validation
         if(empty($name)){
-            $em = "The author name is required";
-            header("Location: ../add-author.php?error=$em");
+            $em = "The category name is required";
+            header("Location: ../add-category.php?error=$em");
             exit;
         }else{
             #insert into database
-            $sql  = "INSERT INTO authors (name) 
+            $sql  = "INSERT INTO categories (name) 
                     VALUES (?)";
             $stmt = $conn-> prepare($sql);
             $res  = $stmt->execute([$name]);
@@ -37,12 +37,12 @@ if(isset($_SESSION['user_id']) &&
             if($res){
                 # Success message
                 $sm = "Successfully created!";
-                header("Location: ../add-author.php?success=$sm");
+                header("Location: ../add-category.php?success=$sm");
                 exit;
             }else{
                 # Error message
                 $em = "Unknown Error Occurred!";
-                header("Location: ../add-author.php?error=$em");
+                header("Location: ../add-category.php?error=$em");
                 exit;
             }
         }        
