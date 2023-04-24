@@ -60,8 +60,9 @@ if(isset($_SESSION['user_id']) &&
                 </div>
             </div>
         </nav>
-     <form action ="php/add-author.php"
+     <form action ="php/add-book.php"
            method="post"
+           enctype="multipart/form-data"
            class="shadow p-4 rounded mt-5"
            style="width: 90%; max-width: 50rem;">
 
@@ -102,7 +103,7 @@ if(isset($_SESSION['user_id']) &&
             <label class="form-label">
                 Book Author
                 </label>
-                    <select name="book_category"
+                    <select name="book_author"
                      class="form-control">
                     <option value="0">
                      Select author 
@@ -150,7 +151,7 @@ if(isset($_SESSION['user_id']) &&
             <label class="form-label">
                 Book Cover
                 </label>
-            <input type="text" 
+            <input type="file" 
                     class="form-control"
                     name="book_cover">
                     
@@ -160,7 +161,7 @@ if(isset($_SESSION['user_id']) &&
             <label class="form-label">
                 File
                 </label>
-            <input type="text" 
+            <input type="file" 
                     class="form-control"
                     name="file">
                     
