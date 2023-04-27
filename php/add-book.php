@@ -53,7 +53,8 @@ if(isset($_SESSION['user_id']) &&
         $location = "../add-book.php";
         $ms = "error";
         is_empty($category, $text, $location, $ms, $user_input);
-      
+        echo "<pre>";
+        print_r($_FILES['book_cover']);
    
 }else{
     header("Location: ../admin.php");
