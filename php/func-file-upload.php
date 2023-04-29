@@ -27,28 +27,38 @@ function upload_file($files, $allowed_exs, $path){
              * renaming the file
              * with random strings
              */
-            $new_file_name = uniqid("",true).'.'.$
-                file_ex_lc;
+            $new_file_name = uniqid("",true).'.'.$file_ex_lc;
             # assigning upload path
-            $file_upload_path = '../uploads/'.$path.''.$
-                new_file_name;
+            $file_upload_path = '../uploads/'.$path.''.$new_file_name;
             /**
              * moving uploaded file to
              * root directory upload/$path folder
              */
             move_uploaded_file($tmp_name, $file_upload_path);
+
+             /** 
+         * Creating success message associative array 
+         * with named keys status and data 
+         **/
+        $sm['status'] = 'success';
+        $sm['data']   = $new_file_name;
+
+        # Return the sm array
+        return $sm;
+
+
           }else{
             /** 
          * Creating error message associative array 
          * with named keys status and data 
          **/
         $em['status'] = 'error';
-        $em['data']   = "You can't upload files of this type";
+        $em['data']   = "You can't upload files off this type";
 
-        # Return the em array
+        # Return the sm array
         return $em;
           }
-
+           
     }else {
         /** 
          * Creating error message associative array 
