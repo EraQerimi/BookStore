@@ -3,7 +3,7 @@
 function upload_file($files, $allowed_exs, $path){
     # get data and store them in var
     $file_name = $files['name'];
-    $tmp_name  = $files['tmp_name'];
+    $tmp_name  = $files['tmp_name']
     $error     = $files['error'];
 
     # if there is no error occurred while uploading
