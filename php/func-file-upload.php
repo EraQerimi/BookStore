@@ -3,7 +3,7 @@
 function upload_file($files, $allowed_exs, $path){
     # get data and store them in var
     $file_name = $files['name'];
-    $tmp_name  = $files['tmp_name']
+    $tmp_name  = $files['tmp_name'];
     $error     = $files['error'];
 
     # if there is no error occurred while uploading
@@ -29,7 +29,7 @@ function upload_file($files, $allowed_exs, $path){
              */
             $new_file_name = uniqid("",true).'.'.$file_ex_lc;
             # assigning upload path
-            $file_upload_path = '../uploads/'.$path.''.$new_file_name;
+            $file_upload_path = '../uploads/'.$path.'/'.$new_file_name;
             /**
              * moving uploaded file to
              * root directory upload/$path folder
