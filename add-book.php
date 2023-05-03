@@ -16,8 +16,24 @@ if(isset($_SESSION['user_id']) &&
     include "php/func-author.php";
     $authors = get_all_author($conn);
 
+    if(isset($_GET['title'])){
+        $title = $_GET['title'];
+    }else $title = '';
    
+    if(isset($_GET['desc'])){
+        $desc = $_GET['desc'];
+    }else $desc = '';
+    
+    if(isset($_GET['category_id'])){
+        $category_id = $_GET['category_id'];
+    }else $category_id= 0;
+
+    if(isset($_GET['author_id'])){
+        $author_id = $_GET['author_id'];
+    }else $author_id= 0;
+    
 ?>
+    
 
 <!DOCTYPE html>
 <html lang="en">
@@ -85,6 +101,7 @@ if(isset($_SESSION['user_id']) &&
                 </label>
             <input type="text" 
                     class="form-control"
+                    value="<?=$title?>"
                     name="book_title">
                     
         </div>
@@ -95,6 +112,7 @@ if(isset($_SESSION['user_id']) &&
                 </label>
             <input type="text" 
                     class="form-control"
+                    value="<?=$desc?>"
                     name="book_description">
                     
         </div>
@@ -113,12 +131,20 @@ if(isset($_SESSION['user_id']) &&
                  if($authors == 0){
                     #Do nothing
                  }else{ 
-                 foreach ($authors as $author) {  ?> 
-                    <option
+                 foreach ($authors as $author) { 
+                    if($author_id == $author['id'])  {
+                 ?> 
+                <option
+                      selected
+                      value="<?=$author['id']?>">
+                      <?=$author['name']?>
+                </option>
+                <?php  } else{  ?>
+                     <option
                     value="<?=$author['id']?>">
                      <?=$author['name']?>
                     </option>
-                <?php  } } ?>          
+              <?php  } }} ?>          
              </select>
         </div>
 
@@ -136,13 +162,20 @@ if(isset($_SESSION['user_id']) &&
                  if($categories == 0){
                     #Do nothing
                  }else{ 
-                 foreach ($categories as $category) { 
-                    ?> 
+                    foreach ($categories as $category) { 
+                        if($category_id == $category['id'])  {
+                     ?> 
                     <option
-                    value="<?=$category['id']?>">
-                     <?=$category['name']?>
+                          selected
+                          value="<?=$category['id']?>">
+                          <?=$category['name']?>
                     </option>
-                <?php  } } ?>          
+                    <?php  } else{  ?>
+                         <option
+                        value="<?=$category['id']?>">
+                         <?=$category['name']?>
+                        </option>
+                  <?php  } }} ?>         
              </select>       
                     
         </div>

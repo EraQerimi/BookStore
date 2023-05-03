@@ -9,7 +9,7 @@ $pass = "";
 
 
 #database name
-$db_name = "online_book_store_db";
+$db_name = "oonline_book_store_db";
 
 // Creating the database connection using PHP data objects (PDO)
 
