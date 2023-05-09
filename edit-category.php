@@ -12,6 +12,7 @@ if(isset($_SESSION['user_id']) &&
         exit;
     }
 
+    $id = $_GET['id'];
     
     #Database connection file
     include "db_conn.php";
