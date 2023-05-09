@@ -157,7 +157,7 @@ if(isset($_SESSION['user_id']) &&
                     <td><?=$j?></td>
                     <td><?=$category['name']?></td>
                     <td>
-                            <a href="#" class="btn btn-warning">Edit</a>
+                            <a href="edit-category.php?id=<?=$category['id']?>" class="btn btn-warning">Edit</a>
                             <a href="#" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
