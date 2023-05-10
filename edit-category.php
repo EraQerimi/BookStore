@@ -19,7 +19,14 @@ if(isset($_SESSION['user_id']) &&
     
     # Category helper function
     include "php/func-category.php";
-    $categories = get_all_categories($conn);
+    $category = get_category($conn , $id);
+
+    # If the ID is invalid
+    if($category == 0) {
+        #redirect to admin.php page
+        header("Location: admin.php");
+        exit;
+    }
    
 ?>
 
@@ -64,13 +71,13 @@ if(isset($_SESSION['user_id']) &&
                 </div>
             </div>
         </nav>
-     <form action ="php/add-category.php"
+     <form action ="php/edit-category.php"
            method="post"
            class="shadow p-4 rounded mt-5"
            style="width: 90%; max-width: 50rem;">
 
         <h1 class="text-center pb-5 display-4 fs-3">
-            Add New Category
+            Edit Category
         </h1>
         <?php if(isset($_GET['error'])) {?>
          <div class="alert alert-danger" role="alert">
@@ -88,13 +95,14 @@ if(isset($_SESSION['user_id']) &&
                 </label>
             <input type="text" 
                     class="form-control"
+                    value="<?=$category['name']?>"
                     name="category_name">
                     
         </div>
 
         <button type="submit" 
                class="btn btn-primary">
-               Add Category</button>
+               Update </button>
       
      </form>
     </div>
