@@ -94,9 +94,9 @@ if(isset($_SESSION['user_id']) &&
                 Category name
                 </label>
             <input type="text" 
-                    class="form-control"
-                    value="<?=$category['name']?>"
-                    name="category_name">
+                    value="<?=$category['id']?>"
+                    hidden
+                    name="category_id">
                     
         </div>
 
