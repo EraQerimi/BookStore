@@ -13,4 +13,6 @@ function get_all_author($con){
    }
 
    return $authors;
+
+   //return
 }
