@@ -91,18 +91,20 @@ if(isset($_SESSION['user_id']) &&
         <?php } ?>
         <div class="mb-3">
             <label class="form-label">
-                Category name
+                Category Name
                 </label>
+
+
             <input type="text" 
-                    value="=$category['id']?>"
-                    hidden
-                    name="category_id">
+                    class="form-control";
+                    value="<?=$category['name'] ?>"
+                    name="category_name">
                     
         </div>
 
         <button type="submit" 
                class="btn btn-primary">
-               Update </button>
+               Edit Category</button>
       
      </form>
     </div>
