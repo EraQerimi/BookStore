@@ -190,7 +190,7 @@ if(isset($_SESSION['user_id']) &&
                     <td><?=$k?></td>
                     <td><?=$author['name']?></td>
                     <td>
-                            <a href="#" class="btn btn-warning">Edit</a>
+                            <a href="edit-author.php?id=<?=$author['id']?>" class="btn btn-warning">Edit</a>
                             <a href="#" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
