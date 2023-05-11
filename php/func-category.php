@@ -22,9 +22,9 @@ function get_category($con, $id){
    $stmt->execute([$id]);
 
    if ($stmt->rowCount() > 0) {
-   	  $categories = $stmt->fetchAll();
+   	  $category = $stmt->fetchAll();
    }else {
-      $categories = 0;
+      $category = 0;
    }
 
    return $category;

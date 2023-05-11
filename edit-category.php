@@ -19,7 +19,7 @@ if(isset($_SESSION['user_id']) &&
     
     # Category helper function
     include "php/func-category.php";
-    $category = get_category($conn , $id);
+    $category = get_category($conn, $id);
 
     # If the ID is invalid
     if($category == 0) {
@@ -60,7 +60,7 @@ if(isset($_SESSION['user_id']) &&
                             <a class="nav-link" href="add-book.php">Add Book</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="add-category.php">Add Category</a>
+                            <a class="nav-link" href="add-category.php">Add Category</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="add-author.php">Add Author</a>
@@ -94,7 +94,7 @@ if(isset($_SESSION['user_id']) &&
                 Category name
                 </label>
             <input type="text" 
-                    value="<?=$category['id']?>"
+                    value="=$category['id']?>"
                     hidden
                     name="category_id">
                     
