@@ -21,6 +21,13 @@ if(isset($_SESSION['user_id']) &&
     include "php/func-book.php";
     $book = get_book($conn, $id);
 
+    #If the ID is invalid
+    if($book == 0){
+        #Redirect to admin.php page
+        header("Location: admin.php");
+        exit;
+    }
+
     # Category helper function
     include "php/func-category.php";
     $categories = get_all_categories($conn);
@@ -131,7 +138,7 @@ if(isset($_SESSION['user_id']) &&
                     #Do nothing
                  }else{ 
                  foreach ($authors as $author) { 
-                    if($author_id == $author['id'])  {
+                    if($book['author_id'] == $author['id'])  {
                  ?> 
                 <option
                       selected
@@ -162,7 +169,7 @@ if(isset($_SESSION['user_id']) &&
                     #Do nothing
                  }else{ 
                     foreach ($categories as $category) { 
-                        if($category_id == $category['id'])  {
+                        if($book['category_id'] == $category['id'])  {
                      ?> 
                     <option
                           selected
@@ -186,6 +193,7 @@ if(isset($_SESSION['user_id']) &&
             <input type="file" 
                     class="form-control"
                     name="book_cover">
+                    <a href="" class="link-dark">Current Cover</a>
                     
         </div>
 
