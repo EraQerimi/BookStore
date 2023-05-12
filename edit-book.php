@@ -193,7 +193,7 @@ if(isset($_SESSION['user_id']) &&
             <input type="file" 
                     class="form-control"
                     name="book_cover">
-                    <a href="" class="link-dark">Current Cover</a>
+                    <a href="uploads/cover/<?=$book['cover']?>" class="link-dark">Current Cover</a>
                     
         </div>
 
@@ -204,6 +204,8 @@ if(isset($_SESSION['user_id']) &&
             <input type="file" 
                     class="form-control"
                     name="file">
+                    <a href="uploads/files/<?=$book['file']?>" class="link-dark">Current File</a>
+                    
                     
         </div>
 
