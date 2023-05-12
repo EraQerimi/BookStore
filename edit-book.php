@@ -4,9 +4,22 @@ session_start();
 #if the admin is logged in
 if(isset($_SESSION['user_id']) &&
    isset($_SESSION['user_email'])){
+     #if book id is not set
+     if(!isset($_GET['id'])){
+        #redirect to admin.php page
+        header("Location: admin.php");
+        exit;
+    }
+
+    $id = $_GET['id'];
+
 
     #Database connection file
     include "db_conn.php";
+    
+    # Book helper function
+    include "php/func-book.php";
+    $book = get_book($conn, $id);
 
     # Category helper function
     include "php/func-category.php";
@@ -16,21 +29,7 @@ if(isset($_SESSION['user_id']) &&
     include "php/func-author.php";
     $authors = get_all_author($conn);
 
-    if(isset($_GET['title'])){
-        $title = $_GET['title'];
-    }else $title = '';
-   
-    if(isset($_GET['desc'])){
-        $desc = $_GET['desc'];
-    }else $desc = '';
     
-    if(isset($_GET['category_id'])){
-        $category_id = $_GET['category_id'];
-    }else $category_id= 0;
-
-    if(isset($_GET['author_id'])){
-        $author_id = $_GET['author_id'];
-    }else $author_id= 0;
     
 ?>
     
@@ -62,7 +61,7 @@ if(isset($_SESSION['user_id']) &&
                             <a class="nav-link" aria-current="page" href="index.php">Store</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="add-book.php">Add Book</a>
+                            <a class="nav-link" href="add-book.php">Add Book</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="add-category.php">Add Category</a>
@@ -101,7 +100,7 @@ if(isset($_SESSION['user_id']) &&
                 </label>
             <input type="text" 
                     class="form-control"
-                    value="<?=$title?>"
+                    value="<?=$book['title']?>"
                     name="book_title">
                     
         </div>
@@ -112,7 +111,7 @@ if(isset($_SESSION['user_id']) &&
                 </label>
             <input type="text" 
                     class="form-control"
-                    value="<?=$desc?>"
+                    value="<?=$book['description']?>"
                     name="book_description">
                     
         </div>
