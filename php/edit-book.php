@@ -23,8 +23,11 @@ if(isset($_SESSION['user_id']) &&
          and store them in var 
          **/
          
-        $name = $_POST['author_name'];
-        $id = $_POST['author_id'];
+        $id          = $_POST['book_id'];
+		$title       = $_POST['book_title'];
+		$description = $_POST['book_description'];
+		$author      = $_POST['book_author'];
+		$category    = $_POST['book_category'];
 
         #simple from Validation
         if(empty($name)){
