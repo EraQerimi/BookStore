@@ -106,10 +106,14 @@ if(isset($_SESSION['user_id']) &&
                 Book Title
                 </label>
             <input type="text" 
+                    hidden
+                    value="<?=$book['id']?>"
+                    name="book_id">
+                    
+            <input type="text" 
                     class="form-control"
                     value="<?=$book['title']?>"
                     name="book_title">
-                    
         </div>
 
         <div class="mb-3">

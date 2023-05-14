@@ -8,7 +8,7 @@ if(isset($_SESSION['user_id']) &&
         #Database connection file
         include "../db_conn.php";
   
-    /* check if category
+    /* check if author
        name is submitted
        **/
 

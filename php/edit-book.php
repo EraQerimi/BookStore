@@ -8,16 +8,21 @@ if(isset($_SESSION['user_id']) &&
         #Database connection file
         include "../db_conn.php";
   
-    /* check if category
-       name is submitted
-       **/
-
-    if(isset($_POST['author_name']) && 
-       isset($_POST['author_id'])){
+     /*	  If all Input field
+	  are filled
+	**/
+    if(isset($_POST['book_id'])           && 
+        isset($_POST['book_title'])       &&
+        isset($_POST['book_description']) &&
+        isset($_POST['book_author'])      &&
+        isset($_POST['book_category'])    &&
+        isset($_FILES['book_cover'])      &&
+        isset($_FILES['file'])){
         /*
          Get data from POST request
          and store them in var 
          **/
+         
         $name = $_POST['author_name'];
         $id = $_POST['author_id'];
 
