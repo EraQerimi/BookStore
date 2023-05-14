@@ -82,7 +82,7 @@ if(isset($_SESSION['user_id']) &&
                 </div>
             </div>
         </nav>
-     <form action ="php/add-book.php"
+     <form action ="php/edit-book.php"
            method="post"
            enctype="multipart/form-data"
            class="shadow p-4 rounded mt-5"
