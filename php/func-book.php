@@ -18,7 +18,7 @@ function get_all_books($con){
 
 # Get book by ID function
 function get_book($con, $id){
-   $sql  = "SELECT * FROM books WHERE id=?";
+   $sql  = "SELECT * FROM books WHERE  id=?";
    $stmt = $con->prepare($sql);
    $stmt->execute([$id]);
 
