@@ -53,24 +53,24 @@ if(isset($_SESSION['user_id']) &&
         #simple form Validation
 
         $text = "Book title";
-        $location = "../add-book.php";
-        $ms = "error";
-        is_empty($title, $text, $location, $ms, $user_input);
+        $location = "../edit-book.php";
+        $ms = "id=$id&error";
+        is_empty($title, $text, $location, $ms, "");
 
         $text = "Book description";
-        $location = "../add-book.php";
-        $ms = "error";
-        is_empty($description, $text, $location, $ms, $user_input);
+        $location = "../edit-book.php";
+        $ms = "id=$id&error";
+        is_empty($description, $text, $location, $ms, "");
 
         $text = "Book author";
-        $location = "../add-book.php";
-        $ms = "error";
-        is_empty($author, $text, $location, $ms, $user_input);
+        $location = "../edit-book.php";
+        $ms = "id=$id&error";
+        is_empty($author, $text, $location, $ms, "");
 
         $text = "Book category";
-        $location = "../add-book.php";
-        $ms = "error";
-        is_empty($category, $text, $location, $ms, $user_input);
+        $location = "../edit-book.php";
+        $ms = "id=$id&error";
+        is_empty($category, $text, $location, $ms, "");
 
 
         #simple from Validation
