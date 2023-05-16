@@ -215,8 +215,8 @@ if(isset($_SESSION['user_id']) &&
                     name="file">
                     <input type="text" 
                     hidden
-                    value="<?=$book['cover']?>"
-                    name="current_cover"> 
+                    value="<?=$book['file']?>"
+                    name="current_file"> 
                     <a href="uploads/files/<?=$book['file']?>" class="link-dark">Current File</a>
                     
                     
