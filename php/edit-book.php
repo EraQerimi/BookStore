@@ -7,7 +7,13 @@ if(isset($_SESSION['user_id']) &&
 
         #Database connection file
         include "../db_conn.php";
-  
+
+        # Validation helper function
+        include "func-validation.php";
+
+        # File Upload helper function
+        include "func-file-upload.php";
+    
      /*	  If all Input field
 	  are filled
 	**/
@@ -30,6 +36,13 @@ if(isset($_SESSION['user_id']) &&
 		$description = $_POST['book_description'];
 		$author      = $_POST['book_author'];
 		$category    = $_POST['book_category'];
+
+        /*
+        Get current cover & current file
+        from POST request and store  them in var
+        **/
+        $current_cover = $_POST['current_cover'];
+        $current_file  = $_POST['current_file'];
 
         #simple from Validation
         if(empty($name)){
