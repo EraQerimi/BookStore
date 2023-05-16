@@ -74,7 +74,7 @@ if(isset($_SESSION['user_id']) &&
         <thead>
             <tr>
                 <th>#</th>
-                <th>Title<
+                <th>Title<th>
                 <th>Author</th>
                 <th>Description</th>
                 <th>Category</th>
