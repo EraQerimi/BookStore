@@ -18,7 +18,7 @@ if(isset($_SESSION['user_id']) &&
         isset($_POST['book_category'])    &&
         isset($_FILES['book_cover'])      &&
         isset($_FILES['file'])            &&
-        isset($_POST['current_cover'])     &&
+        isset($_POST['current_cover'])    &&
         isset($_POST['current_file'] )) {
         /*
          Get data from POST request

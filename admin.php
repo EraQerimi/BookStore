@@ -20,8 +20,8 @@ if(isset($_SESSION['user_id']) &&
     include "php/func-category.php";
     $categories = get_all_categories($conn);
 
-    // print_r($categories);
    
+    //print_r($categories);
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +74,7 @@ if(isset($_SESSION['user_id']) &&
         <thead>
             <tr>
                 <th>#</th>
-                <th>Title</th>
+                <th>Title<
                 <th>Author</th>
                 <th>Description</th>
                 <th>Category</th>
