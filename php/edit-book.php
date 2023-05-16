@@ -49,6 +49,29 @@ if(isset($_SESSION['user_id']) &&
         **/
         $current_cover = $_POST['current_cover'];
         $current_file  = $_POST['current_file'];
+ 
+        #simple form Validation
+
+        $text = "Book title";
+        $location = "../add-book.php";
+        $ms = "error";
+        is_empty($title, $text, $location, $ms, $user_input);
+
+        $text = "Book description";
+        $location = "../add-book.php";
+        $ms = "error";
+        is_empty($description, $text, $location, $ms, $user_input);
+
+        $text = "Book author";
+        $location = "../add-book.php";
+        $ms = "error";
+        is_empty($author, $text, $location, $ms, $user_input);
+
+        $text = "Book category";
+        $location = "../add-book.php";
+        $ms = "error";
+        is_empty($category, $text, $location, $ms, $user_input);
+
 
         #simple from Validation
         if(empty($name)){
