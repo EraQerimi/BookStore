@@ -13,6 +13,12 @@ if(isset($_SESSION['user_id']) &&
 
         # File Upload helper function
         include "func-file-upload.php";
+
+        # Validation helper function
+        include "func-validation.php";
+
+        # File Upload helper function
+        include "func-file-upload.php";
     
      /*	  If all Input field
 	  are filled
