@@ -175,11 +175,9 @@ if(isset($_SESSION['user_id']) &&
 
             #Delete from the server 
             unlink($c_p_book_cover);
-            unlink( $c_p_file);
 
             #Getting the new file name and the new book cover name
 
-            $file_URL = $file['data'];
 		    $book_cover_URL = $book_cover['data'];
 
               #update just the data
