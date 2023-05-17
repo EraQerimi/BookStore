@@ -79,7 +79,13 @@ if(isset($_SESSION['user_id']) &&
         $allowed_image_exs = array("jpg", "jpeg", "png");
         $path = "cover";
         $book_cover = upload_file($_FILES['book_cover'], $allowed_image_exs, $path);
+    
         
+              # book cover Uploading
+         $allowed_image_exs = array("jpg", "jpeg", "png");
+         $path = "cover";
+         $book_cover = upload_file($_FILES['book_cover'], $allowed_image_exs, $path);
+
             }else{
                 #update just the book cover
             } 
