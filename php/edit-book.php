@@ -86,6 +86,22 @@ if(isset($_SESSION['user_id']) &&
          $path = "files";
          $book_cover = upload_file($_FILES['file'], $allowed_file_exs, $path);
 
+
+         if ($book_cover['status'] == "error") {
+	    	$em = $book_cover['data'];
+
+	    	/*
+	    	  Redirect to '../add-book.php' 
+	    	  and passing error message & user_input
+	    	**/
+	    	header("Location: ../add-book.php?error=$em&$user_input");
+	    	exit;
+	    }else {
+            
+        }
+
+
+
             }else{
                 #update just the book cover
             } 
