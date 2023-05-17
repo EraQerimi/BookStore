@@ -191,7 +191,7 @@ if(isset($_SESSION['user_id']) &&
                    cover=?
               WHERE id=?";
       $stmt = $conn->prepare($sql);
-      $res  = $stmt->execute([$title, $author, $description, $category, $id]);
+      $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $id]);
        
       /*
           if there is no error while 
