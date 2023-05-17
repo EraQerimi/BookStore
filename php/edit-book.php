@@ -96,8 +96,8 @@ if(isset($_SESSION['user_id']) &&
 	    	$em = $book_cover['data'];
 
 	    	/*
-	    	  Redirect to '../add-book.php' 
-	    	  and passing error message & user_input
+	    	  Redirect to '../edit-book.php' 
+	    	  and passing error message & id
 	    	**/
 	    	header("Location: ../edit-book.php?error=$em&id=$id");
 	    	exit;
