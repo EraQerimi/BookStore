@@ -1,4 +1,6 @@
 <?php
+
+# Form validation function
 function is_empty($var, $text, $location, $ms, $data){
     if(empty($var)) {
         $em = "The ".$text." is required";

@@ -35,7 +35,7 @@ if(isset($_SESSION['user_id']) &&
             $res  = $stmt->execute([$name, $id]);
             /*
                 if there is no error while 
-                inserting the data
+                updating the data
             */ 
             if($res){
                 # Success message
