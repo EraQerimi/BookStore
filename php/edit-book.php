@@ -99,7 +99,7 @@ if(isset($_SESSION['user_id']) &&
 	    	  Redirect to '../add-book.php' 
 	    	  and passing error message & user_input
 	    	**/
-	    	header("Location: ../edit-book.php?error=$em&$user_input");
+	    	header("Location: ../edit-book.php?error=$em&id=$id");
 	    	exit;
 	    }else {
             
