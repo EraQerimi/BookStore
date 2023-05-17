@@ -102,12 +102,9 @@ if(isset($_SESSION['user_id']) &&
 	    	header("Location: ../edit-book.php?error=$em&id=$id");
 	    	exit;
 	    }else {
-            
+            # current book cover location   
         }
-
-
-
-            }else{
+      }else{
                 #update just the book cover
             } 
          }
