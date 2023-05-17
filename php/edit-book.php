@@ -164,7 +164,7 @@ if(isset($_SESSION['user_id']) &&
                          file=?
                     WHERE id=?";
             $stmt = $conn->prepare($sql);
-            $res  = $stmt->execute([$title, $author, $description, $category, $id]);
+            $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $file_URL, $id]);
              
             /*
                 if there is no error while 
@@ -183,13 +183,10 @@ if(isset($_SESSION['user_id']) &&
             }
         }
 }else{
-    header("Location: ../admin.php");
-    exit;
+      header("Location: ../admin.php");
+    exit; 
 }
-
-
-
-}else{
+{
     header("Location: ../login.php");
     exit;
 } 
