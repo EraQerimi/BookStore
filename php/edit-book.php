@@ -122,7 +122,8 @@ if(isset($_SESSION['user_id']) &&
               SET title =?,
                    author_id=?,
                    description=?,
-                   category_id=?
+                   category_id=?,
+                   cover=?
               WHERE id=?";
       $stmt = $conn->prepare($sql);
       $res  = $stmt->execute([$title, $author, $description, $category, $id]);
