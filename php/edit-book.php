@@ -104,6 +104,12 @@ if(isset($_SESSION['user_id']) &&
 	    }else {
             # current book cover path
             $c_p_book_cover = "../uploads/cover/$current_cover";  
+
+            # current file path
+            $c_p_file = "../uploads/files/$current_file";  
+
+            #Delete from the server
+            
         }
       }else{
                 #update just the book cover
