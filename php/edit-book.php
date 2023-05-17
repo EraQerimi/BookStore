@@ -160,7 +160,8 @@ if(isset($_SESSION['user_id']) &&
                          author_id=?,
                          description=?,
                          category_id=?,
-                         cover=?
+                         cover=?,
+                         file=?
                     WHERE id=?";
             $stmt = $conn->prepare($sql);
             $res  = $stmt->execute([$title, $author, $description, $category, $id]);
