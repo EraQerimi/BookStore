@@ -109,7 +109,8 @@ if(isset($_SESSION['user_id']) &&
             $c_p_file = "../uploads/files/$current_file";  
 
             #Delete from the server
-            
+            unlink($c_p_book_cover);
+
         }
       }else{
                 #update just the book cover
