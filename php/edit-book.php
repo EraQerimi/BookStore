@@ -102,7 +102,8 @@ if(isset($_SESSION['user_id']) &&
 	    	header("Location: ../edit-book.php?error=$em&id=$id");
 	    	exit;
 	    }else {
-            # current book cover location   
+            # current book cover location 
+            $c_p_book_cover = "../uploads/cover/$current_cover";  
         }
       }else{
                 #update just the book cover
