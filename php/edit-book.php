@@ -14,11 +14,6 @@ if(isset($_SESSION['user_id']) &&
         # File Upload helper function
         include "func-file-upload.php";
 
-        # Validation helper function
-        include "func-validation.php";
-
-        # File Upload helper function
-        include "func-file-upload.php";
     
      /*	  If all Input field
 	  are filled
@@ -72,18 +67,16 @@ if(isset($_SESSION['user_id']) &&
         $ms = "id=$id&error";
         is_empty($category, $text, $location, $ms, "");
 
-        #if the admin tries to update the book cover    
+        /*if the admin tries to update the book cover  **/  
 
          if(!empty($_FILES['book_cover']['name'])){
-                #if thw admin tries to update both
+                #if the admin tries to update both
 
             if(!empty($_FILES['book_cover']['name'])){
                 #update both here
             }else{
-                #update just book cover
-            }
-        
-           
+                #update just the book cover
+            } 
          }
         #if the admin tries to update just the file
         else if(!empty($_FILES['file']['name'])){
@@ -91,7 +84,7 @@ if(isset($_SESSION['user_id']) &&
         }else{
             #update just the data
             $sql = "UPDATE books
-                    SET title =?
+                    SET title =?,
                          author_id=?,
                          description=?,
                          category_id=?
