@@ -19,7 +19,7 @@ if(isset($_SESSION['user_id']) &&
 	  are filled
 	**/
     if(isset($_POST['book_id'])           && 
-        isset($_POST['book_title'])       &&
+        isset($_POST['book_title'])        &&
         isset($_POST['book_description']) &&
         isset($_POST['book_author'])      &&
         isset($_POST['book_category'])    &&
@@ -86,7 +86,10 @@ if(isset($_SESSION['user_id']) &&
          $path = "files";
          $book_cover = upload_file($_FILES['file'], $allowed_file_exs, $path);
 
-
+         /*
+	    If error occurred while 
+	    uploading 
+	    **/
          if ($book_cover['status'] == "error") {
 	    	$em = $book_cover['data'];
 
