@@ -108,8 +108,9 @@ if(isset($_SESSION['user_id']) &&
             # current file path
             $c_p_file = "../uploads/files/$current_file";  
 
-            #Delete from the server
+            #Delete from the server 
             unlink($c_p_book_cover);
+            unlink( $c_p_file);
 
         }
       }else{
