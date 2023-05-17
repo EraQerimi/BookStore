@@ -116,6 +116,34 @@ if(isset($_SESSION['user_id']) &&
 
             $file_URL = $file['data'];
 		    $book_cover_URL = $book_cover['data'];
+
+              #update just the data
+              $sql = "UPDATE books
+              SET title =?,
+                   author_id=?,
+                   description=?,
+                   category_id=?
+              WHERE id=?";
+      $stmt = $conn->prepare($sql);
+      $res  = $stmt->execute([$title, $author, $description, $category, $id]);
+       
+      /*
+          if there is no error while 
+          updating the data
+      */ 
+      if($res){
+          # Success message
+          $sm = "Successfully updated !";
+          header("Location: ../edit-book.php?success=$sm&id=$id");
+          exit;
+      }else{
+          # Error message
+          $em = "Unknown Error Occurred!";
+          header("Location: ../edit-book.php?error=$em&id=$id");
+          exit;
+      }
+  }
+
     
         }
       }else{
