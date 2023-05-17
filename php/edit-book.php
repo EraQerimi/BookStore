@@ -112,6 +112,11 @@ if(isset($_SESSION['user_id']) &&
             unlink($c_p_book_cover);
             unlink( $c_p_file);
 
+            #Getting the new file name and the new book cover name
+
+            $file_URL = $file['data'];
+		    $book_cover_URL = $book_cover['data'];
+    
         }
       }else{
                 #update just the book cover
