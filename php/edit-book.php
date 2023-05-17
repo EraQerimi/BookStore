@@ -170,9 +170,6 @@ if(isset($_SESSION['user_id']) &&
 	    	header("Location: ../edit-book.php?error=$em&id=$id");
 	    	exit;
 	    }else {
-            # current book cover path
-            $c_p_book_cover = "../uploads/cover/$current_cover";  
-
             # current file path
             $c_p_file = "../uploads/files/$current_file";  
 
