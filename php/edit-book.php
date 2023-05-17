@@ -84,13 +84,15 @@ if(isset($_SESSION['user_id']) &&
               # book cover Uploading
          $allowed_file_exs = array("pdf", "docx", "pptx");
          $path = "files";
-         $book_cover = upload_file($_FILES['file'], $allowed_file_exs, $path);
+         $file = upload_file($_FILES['file'], $allowed_file_exs, $path);
 
          /*
 	    If error occurred while 
 	    uploading 
 	    **/
-         if ($book_cover['status'] == "error") {
+         if ($book_cover['status'] == "error"
+            $file['status'] == "error") {
+                
 	    	$em = $book_cover['data'];
 
 	    	/*
