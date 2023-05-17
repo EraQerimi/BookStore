@@ -90,16 +90,16 @@ if(isset($_SESSION['user_id']) &&
 	    If error occurred while 
 	    uploading 
 	    **/
-         if ($book_cover['status'] == "error"
+         if ($book_cover['status'] == "error" ||
             $file['status'] == "error") {
-                
+
 	    	$em = $book_cover['data'];
 
 	    	/*
 	    	  Redirect to '../add-book.php' 
 	    	  and passing error message & user_input
 	    	**/
-	    	header("Location: ../add-book.php?error=$em&$user_input");
+	    	header("Location: ../edit-book.php?error=$em&$user_input");
 	    	exit;
 	    }else {
             
