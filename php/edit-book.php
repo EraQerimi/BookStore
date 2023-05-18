@@ -19,7 +19,7 @@ if(isset($_SESSION['user_id']) &&
 	  are filled
 	**/
     if(isset($_POST['book_id'])           && 
-        isset($_POST['book_title'])        &&
+        isset($_POST['book_title'])       &&
         isset($_POST['book_description']) &&
         isset($_POST['book_author'])      &&
         isset($_POST['book_category'])    &&
@@ -50,22 +50,22 @@ if(isset($_SESSION['user_id']) &&
         $text = "Book title";
         $location = "../edit-book.php";
         $ms = "id=$id&error";
-        is_empty($title, $text, $location, $ms, "");
+               is_empty($title, $text, $location, $ms, "");
 
         $text = "Book description";
         $location = "../edit-book.php";
         $ms = "id=$id&error";
-        is_empty($description, $text, $location, $ms, "");
+               is_empty($description, $text, $location, $ms, "");
 
         $text = "Book author";
         $location = "../edit-book.php";
         $ms = "id=$id&error";
-        is_empty($author, $text, $location, $ms, "");
+               is_empty($author, $text, $location, $ms, "");
 
         $text = "Book category";
         $location = "../edit-book.php";
         $ms = "id=$id&error";
-        is_empty($category, $text, $location, $ms, "");
+               is_empty($category, $text, $location, $ms, "");
 
         /*if the admin tries to update the book cover  **/  
 
@@ -103,7 +103,7 @@ if(isset($_SESSION['user_id']) &&
 	    	exit;
 	    }else {
             # current book cover path
-            $c_p_book_cover = "../uploads/cover/$current_cover";  
+			$c_p_book_cover = "../uploads/cover/$current_cover";
 
             # current file path
             $c_p_file = "../uploads/files/$current_file";  
@@ -126,29 +126,26 @@ if(isset($_SESSION['user_id']) &&
                    cover=?,
                    file=?
               WHERE id=?";
-      $stmt = $conn->prepare($sql);
-      $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $file_URL, $id]);
-       
-      /*
-          if there is no error while 
-          updating the data
-      */ 
-      if($res){
-          # Success message
-          $sm = "Successfully updated !";
-          header("Location: ../edit-book.php?success=$sm&id=$id");
-          exit;
-      }else{
-          # Error message
-          $em = "Unknown Error Occurred!";
-          header("Location: ../edit-book.php?error=$em&id=$id");
-          exit;
-      }
-  }
-
-    
+            $stmt = $conn->prepare($sql);
+            $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $file_URL, $id]);
+            
+            /*
+                if there is no error while 
+                updating the data
+            */ 
+            if($res){
+                # Success message
+                $sm = "Successfully updated !";
+                header("Location: ../edit-book.php?success=$sm&id=$id");
+                exit;
+            }else{
+                # Error message
+                $em = "Unknown Error Occurred!";
+                header("Location: ../edit-book.php?error=$em&id=$id");
+                exit;
+            }
         }
-      }else{
+    }else{
         #update just the book cover
                 
         # book cover Uploading
@@ -160,8 +157,7 @@ if(isset($_SESSION['user_id']) &&
 	    If error occurred while 
 	    uploading 
 	    **/
-         if ($book_cover['status'] == "error" || 
-            $file['status'] == "error") {
+         if ($book_cover['status'] == "error") {
 
 	    	$em = $book_cover['data'];
 
@@ -172,8 +168,8 @@ if(isset($_SESSION['user_id']) &&
 	    	header("Location: ../edit-book.php?error=$em&id=$id");
 	    	exit;
 	    }else {
-            # current file path
-            $c_p_file = "../uploads/files/$current_file";  
+            # current book cover path
+            $c_p_book_cover = "../uploads/cover/$current_cover";
 
             #Delete from the server 
             unlink($c_p_book_cover);
@@ -190,29 +186,29 @@ if(isset($_SESSION['user_id']) &&
                    category_id=?,
                    cover=?
               WHERE id=?";
-      $stmt = $conn->prepare($sql);
-      $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $id]);
-       
-      /*
-          if there is no error while 
-          updating the data
-      */ 
-      if($res){
-          # Success message
-          $sm = "Successfully updated !";
-          header("Location: ../edit-book.php?success=$sm&id=$id");
-          exit;
-      }else{
-          # Error message
-          $em = "Unknown Error Occurred!";
-          header("Location: ../edit-book.php?error=$em&id=$id");
-          exit;
-      }
-  }
-
+            $stmt = $conn->prepare($sql);
+            $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $id]);
+            
+            /*
+                if there is no error while 
+                updating the data
+            */ 
+            if($res){
+                # Success message
+                $sm = "Successfully updated !";
+                header("Location: ../edit-book.php?success=$sm&id=$id");
+                exit;
+            }else{
+                # Error message
+                $em = "Unknown Error Occurred!";
+                header("Location: ../edit-book.php?error=$em&id=$id");
+                exit;
+            }
         }
-            } 
-         }
+
+      }
+    } 
+    
         #if the admin tries to update just the file
         else if(!empty($_FILES['file']['name'])){
             #update just the file
@@ -223,9 +219,10 @@ if(isset($_SESSION['user_id']) &&
                          author_id=?,
                          description=?,
                          category_id=?,
+                         file=?
                     WHERE id=?";
             $stmt = $conn->prepare($sql);
-            $res  = $stmt->execute([$title, $author, $description, $category, $id]);
+            $res  = $stmt->execute([$title, $author, $description, $category, $file_URL, $id]);
              
             /*
                 if there is no error while 
@@ -242,12 +239,13 @@ if(isset($_SESSION['user_id']) &&
                 header("Location: ../edit-book.php?error=$em&id=$id");
                 exit;
             }
+          }
         
-}{
-      header("Location: ../admin.php");
-    exit; 
-}
-{ 
+        }else{
+            header("Location: ../admin.php");
+            exit; 
+        }
+}else{ 
     header("Location: ../login.php");
     exit;
 } 
