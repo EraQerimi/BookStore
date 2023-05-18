@@ -222,9 +222,9 @@ if(isset($_SESSION['user_id']) &&
             If error occurred while 
             uploading 
             **/
-            if ($book_cover['status'] == "error") {
+            if ($files['status'] == "error") {
 
-                $em = $book_cover['data'];
+                $em = $files['data'];
 
                 /*
                 Redirect to '../edit-book.php' 
@@ -234,10 +234,10 @@ if(isset($_SESSION['user_id']) &&
                 exit;
             }else {
                 # current book cover path
-                $c_p_book_cover = "../uploads/cover/$current_cover";
+                $c_p_file = "../uploads/file/$current_file";
 
                 #Delete from the server 
-                unlink($c_p_book_cover);
+                unlink($c_p_file);
 
                 #Getting the new file name and the new book cover name
 
