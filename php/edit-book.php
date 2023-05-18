@@ -243,7 +243,7 @@ if(isset($_SESSION['user_id']) &&
                 exit;
             }
         
-}else{
+}{
       header("Location: ../admin.php");
     exit; 
 }
