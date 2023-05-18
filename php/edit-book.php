@@ -72,7 +72,7 @@ if(isset($_SESSION['user_id']) &&
          if(!empty($_FILES['book_cover']['name'])){
                 #if the admin tries to update both
 
-            if(!empty($_FILES['book_cover']['name'])){
+            if(!empty($_FILES['file']['name'])){
                 #update both here
 
                 # book cover Uploading
@@ -148,70 +148,73 @@ if(isset($_SESSION['user_id']) &&
     }else{
         #update just the book cover
                 
-        # book cover Uploading
-        $allowed_image_exs = array("jpg", "jpeg", "png");
-        $path = "cover";
-        $book_cover = upload_file($_FILES['book_cover'], $allowed_image_exs, $path);
+                # book cover Uploading
+                $allowed_image_exs = array("jpg", "jpeg", "png");
+                $path = "cover";
+                $book_cover = upload_file($_FILES['book_cover'], $allowed_image_exs, $path);
 
-         /*
-	    If error occurred while 
-	    uploading 
-	    **/
-         if ($book_cover['status'] == "error") {
+                /*
+                If error occurred while 
+                uploading 
+                **/
+                if ($book_cover['status'] == "error") {
 
-	    	$em = $book_cover['data'];
+                    $em = $book_cover['data'];
 
-	    	/*
-	    	  Redirect to '../edit-book.php' 
-	    	  and passing error message & id
-	    	**/
-	    	header("Location: ../edit-book.php?error=$em&id=$id");
-	    	exit;
-	    }else {
-            # current book cover path
-            $c_p_book_cover = "../uploads/cover/$current_cover";
+                    /*
+                    Redirect to '../edit-book.php' 
+                    and passing error message & id
+                    **/
+                    header("Location: ../edit-book.php?error=$em&id=$id");
+                    exit;
+                }else {
+                    # current book cover path
+                    $c_p_book_cover = "../uploads/cover/$current_cover";
 
-            #Delete from the server 
-            unlink($c_p_book_cover);
+                    #Delete from the server 
+                    unlink($c_p_book_cover);
 
-            #Getting the new file name and the new book cover name
+                    #Getting the new file name and the new book cover name
 
-		    $book_cover_URL = $book_cover['data'];
+                    $book_cover_URL = $book_cover['data'];
 
-              #update just the data
-              $sql = "UPDATE books
-              SET title =?,
-                   author_id=?,
-                   description=?,
-                   category_id=?,
-                   cover=?
-              WHERE id=?";
-            $stmt = $conn->prepare($sql);
-            $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $id]);
-            
-            /*
-                if there is no error while 
-                updating the data
-            */ 
-            if($res){
-                # Success message
-                $sm = "Successfully updated !";
-                header("Location: ../edit-book.php?success=$sm&id=$id");
-                exit;
-            }else{
-                # Error message
-                $em = "Unknown Error Occurred!";
-                header("Location: ../edit-book.php?error=$em&id=$id");
-                exit;
+                    #update just the data
+                    $sql = "UPDATE books
+                    SET title =?,
+                        author_id=?,
+                        description=?,
+                        category_id=?,
+                        cover=?
+                    WHERE id=?";
+                    $stmt = $conn->prepare($sql);
+                    $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $id]);
+                    
+                    /*
+                        if there is no error while 
+                        updating the data
+                    */ 
+                    if($res){
+                        # Success message
+                        $sm = "Successfully updated !";
+                        header("Location: ../edit-book.php?success=$sm&id=$id");
+                        exit;
+                    }else{
+                        # Error message
+                        $em = "Unknown Error Occurred!";
+                        header("Location: ../edit-book.php?error=$em&id=$id");
+                        exit;
+                    }
+                }
+
             }
-        }
-
-      }
     } 
     
         #if the admin tries to update just the file
         else if(!empty($_FILES['file']['name'])){
-            #update just the file
+                #update just the file
+            
+
+
         }else{
             #update just the data
             $sql = "UPDATE books
