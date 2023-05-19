@@ -46,7 +46,8 @@ if(isset($_SESSION['user_id']) &&
             */ 
             if($res){
                 # delete the current book_cover and the file
-
+                $cover = $the_book['cover'];
+                $file  = $the_book['file'];
                 # Success message
                 $sm = "Successfully removed !";
                 header("Location: ../admin.php?success=$sm");
