@@ -79,6 +79,8 @@ if(isset($_SESSION['user_id']) &&
         
         <?php if($books == 0){ ?>
             <div class="alert alert-warning text-center p-5" role="alert">
+              <img src="img/emptyy.jpg" width="100">  
+              <br>
               There is no book in the database
             </div> 
        <?php } else { ?>
