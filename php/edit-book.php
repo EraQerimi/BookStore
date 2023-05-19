@@ -216,7 +216,7 @@ if(isset($_SESSION['user_id']) &&
             # book cover Uploading
             $allowed_file_exs = array("pdf", "docx", "pptx");
             $path = "files";
-            $files = upload_file($_FILES['file'], $allowed_file_exs, $path);
+            $file = upload_file($_FILES['file'], $allowed_file_exs, $path);
 
             /*
             If error occurred while 
