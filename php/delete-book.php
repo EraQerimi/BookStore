@@ -33,6 +33,27 @@ if(isset($_SESSION['user_id']) &&
         $stmt2-> execute([$id]);
 
        if( $stmt2->rowCount() > 0){
+   
+            #DELETE the Book from database
+            $sql  = "DELETE  FROM books 
+                      WHERE id=?";
+            $stmt = $conn-> prepare($sql);
+            $res  = $stmt-> execute([ $id]);
+            /*
+                if there is no error while 
+                inserting the data
+            */ 
+            if($res){
+                # Success message
+                $sm = "Successfully removed !";
+                header("Location: ../admin.php?success=$sm");
+                exit;
+            }else{
+                # Error message
+                $em = "Unknown Error Occurred!";
+                header("Location: ../admin.php?error=$em");
+                exit;
+            }
 
        }else{
            $em = "Error Occurred!";
@@ -40,31 +61,6 @@ if(isset($_SESSION['user_id']) &&
            exit;
        }
 
-
-
-
-
-            #DELETE the Book from database
-            $sql  = "DELETE books  
-                    SET name=?
-                    WHERE id=?";
-            $stmt = $conn-> prepare($sql);
-            $res  = $stmt-> execute([$name, $id]);
-            /*
-                if there is no error while 
-                inserting the data
-            */ 
-            if($res){
-                # Success message
-                $sm = "Successfully updated !";
-                header("Location: ../edit-author.php?success=$sm&id=$id");
-                exit;
-            }else{
-                # Error message
-                $em = "Unknown Error Occurred!";
-                header("Location: ../edit-author.php?error=$em&id=$id");
-                exit;
-            }
         }        
 
    
