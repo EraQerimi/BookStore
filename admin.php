@@ -72,7 +72,7 @@ if(isset($_SESSION['user_id']) &&
         <?php } ?>
         <?php if (isset($_GET['success'])) {?>
             <div class="alert alert-success" role="alert">
-                <?=htmlspecialchars($_GET['succes']); ?>
+                <?=htmlspecialchars($_GET['success']); ?>
             </div>
         <?php } ?>
 
