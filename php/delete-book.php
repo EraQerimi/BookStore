@@ -27,11 +27,10 @@ if(isset($_SESSION['user_id']) &&
             exit;
         }else{
                 #GET the Book from database
-                $sql  = "SELECT * FROM books  
-                         SET name=?
+                $sql2  = "SELECT * FROM books  
                         WHERE id=?";
-        $stmt = $conn-> prepare($sql);
-        $res  = $stmt-> execute([$name, $id]);
+        $stmt2 = $conn-> prepare($sql2);
+        $res  = $stmt2-> execute([$id]);
 
 
 
