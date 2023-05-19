@@ -216,15 +216,15 @@ if(isset($_SESSION['user_id']) &&
             # book cover Uploading
             $allowed_file_exs = array("pdf", "docx", "pptx");
             $path = "files";
-            $files = upload_file($_FILES['file'], $allowed_file_exs, $path);
+            $file = upload_file($_FILES['file'], $allowed_file_exs, $path);
 
             /*
             If error occurred while 
             uploading 
             **/
-            if ($files['status'] == "error") {
+            if ($file['status'] == "error") {
 
-                $em = $files['data'];
+                $em = $file['data'];
 
                 /*
                 Redirect to '../edit-book.php' 
@@ -234,14 +234,14 @@ if(isset($_SESSION['user_id']) &&
                 exit;
             }else {
                 # current book cover path
-                $c_p_file = "../uploads/file/$current_file";
+                $c_p_file = "../uploads/files/$current_file";
 
                 #Delete from the server 
                 unlink($c_p_file);
 
-                #Getting the new file name and the new book cover name
+                #Getting the new file name and the new file name
 
-                $book_cover_URL = $book_cover['data'];
+                $file_URL = $file['data'];
 
                 #update just the data
                 $sql = "UPDATE books
@@ -249,10 +249,10 @@ if(isset($_SESSION['user_id']) &&
                     author_id=?,
                     description=?,
                     category_id=?,
-                    cover=?
+                    file=?
                 WHERE id=?";
                 $stmt = $conn->prepare($sql);
-                $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $id]);
+                $res  = $stmt->execute([$title, $author, $description, $category, $file_URL, $id]);
                 
                 /*
                     if there is no error while 
