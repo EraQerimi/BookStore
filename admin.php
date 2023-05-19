@@ -192,7 +192,11 @@ if(isset($_SESSION['user_id']) &&
         <?php } ?>
 
         <?php if($authors == 0){ ?>
-                empty 
+            <div class="alert alert-warning text-center p-5" role="alert">
+              <img src="img/emptyy.jpg" width="100">  
+              <br>
+              There is no author in the database
+            </div>   
         <?php } else { ?>
         <!-- List of All authors -->
         <h4 class="mt-5" >All Authors</h4>
