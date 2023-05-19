@@ -64,9 +64,16 @@ if(isset($_SESSION['user_id']) &&
                 </div>
             </div>
         </nav>
+        <div class="mt-5"></div>
+        <?php if (isset($_GET['error'])) {?>
+            <div class="alert alert-danger" role="alert">
+                <?=htmlspecialchars($_GET['error']); ?>
+            </div>
+        
         <?php if($books == 0){ ?>
                 empty 
        <?php } else { ?>
+
        <!-- List of All Books -->
     <h4 class="mt-5" >All Books</h4>
     <table class="table table-bordered shadow">
