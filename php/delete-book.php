@@ -30,7 +30,15 @@ if(isset($_SESSION['user_id']) &&
                 $sql2  = "SELECT * FROM books  
                         WHERE id=?";
         $stmt2 = $conn-> prepare($sql2);
-        $res  = $stmt2-> execute([$id]);
+        $stmt2-> execute([$id]);
+
+       if( $stmt2->rowCount() > 0){
+
+       }else{
+           $em = "Error Occurred!";
+           header("Location: ../admin.php?error=$em");
+           exit;
+       }
 
 
 
