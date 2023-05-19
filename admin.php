@@ -71,11 +71,11 @@ if(isset($_SESSION['user_id']) &&
             </div>
         <?php } ?>
         <?php if (isset($_GET['success'])) {?>
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-success" role="alert">
                 <?=htmlspecialchars($_GET['succes']); ?>
             </div>
         <?php } ?>
-        
+
         
         <?php if($books == 0){ ?>
                 empty 
