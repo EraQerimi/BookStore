@@ -222,7 +222,7 @@ if(isset($_SESSION['user_id']) &&
             If error occurred while 
             uploading 
             **/
-            if ($files['status'] == "error") {
+            if ($file['status'] == "error") {
 
                 $em = $file['data'];
 
