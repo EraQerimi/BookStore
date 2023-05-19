@@ -26,8 +26,8 @@ if(isset($_SESSION['user_id']) &&
             header("Location: ../admin.php?error=$em");
             exit;
         }else{
-            #UPDATE the database
-            $sql  = "DELETE authors  
+            #UPDATE the Book from database
+            $sql  = "DELETE books  
                     SET name=?
                     WHERE id=?";
             $stmt = $conn-> prepare($sql);
