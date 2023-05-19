@@ -241,7 +241,7 @@ if(isset($_SESSION['user_id']) &&
 
                 #Getting the new file name and the new file name
 
-                $book_cover_URL = $book_cover['data'];
+                $file_URL = $file['data'];
 
                 #update just the data
                 $sql = "UPDATE books
