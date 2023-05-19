@@ -10,7 +10,7 @@ if (isset($_SESSION['user_id']) &&
 
 
     /*
-	  check if the category 
+	  check if the author 
 	  id set
 	**/
 	if (isset($_GET['id'])) {
@@ -28,7 +28,7 @@ if (isset($_SESSION['user_id']) &&
 		}else {
            
                 # DELETE the category from Database
-				$sql  = "DELETE FROM categories
+				$sql  = "DELETE FROM authors
 				         WHERE id=?";
 				$stmt = $conn->prepare($sql);
 				$res  = $stmt->execute([$id]);
