@@ -21,7 +21,6 @@ if(isset($_SESSION['user_id']) &&
     $categories = get_all_categories($conn);
 
    
-    //print_r($categories);
 ?>
 
 <!DOCTYPE html>
