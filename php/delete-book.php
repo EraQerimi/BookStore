@@ -51,6 +51,7 @@ if(isset($_SESSION['user_id']) &&
                 $c_b_c = "../uploads/cover/$cover";
                 $c_f = "../uploads/files/$cover";
                 unlink($c_b_c);
+                unlink($c_f);
                 
 
                 # Success message
