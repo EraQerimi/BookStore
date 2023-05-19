@@ -124,8 +124,10 @@ if(isset($_SESSION['user_id']) &&
                 ?>
             </td>
             <td>
-                <a href="edit-book.php?id=<?=$book['id']?>" class="btn btn-warning">Edit</a>
-                <a href="#" class="btn btn-danger"> Delete</a>
+                <a href="edit-book.php?id=<?=$book['id']?>" 
+                   class="btn btn-warning">Edit</a>
+                <a href="delete-book.php?id=<?=$book['id']?>" 
+                   class="btn btn-danger"> Delete</a>
             </td>
         </tr>
         <?php }  ?>
@@ -159,7 +161,7 @@ if(isset($_SESSION['user_id']) &&
                     <td>
                             <a href="edit-category.php?id=<?=$category['id']?>" 
                                class="btn btn-warning">Edit</a>
-                            <a href="php/delete-category.php?id=<?=$category['id']?>" 
+                            <a href="#" 
                                class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
