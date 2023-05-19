@@ -249,10 +249,10 @@ if(isset($_SESSION['user_id']) &&
                     author_id=?,
                     description=?,
                     category_id=?,
-                    cover=?
+                    file=?
                 WHERE id=?";
                 $stmt = $conn->prepare($sql);
-                $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $id]);
+                $res  = $stmt->execute([$title, $author, $description, $category, $file_URL, $id]);
                 
                 /*
                     if there is no error while 
