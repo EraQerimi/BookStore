@@ -234,7 +234,7 @@ if(isset($_SESSION['user_id']) &&
                 exit;
             }else {
                 # current book cover path
-                $c_p_file = "../uploads/file/$current_file";
+                $c_p_file = "../uploads/files/$current_file";
 
                 #Delete from the server 
                 unlink($c_p_file);
