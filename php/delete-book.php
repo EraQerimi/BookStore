@@ -15,19 +15,19 @@ if(isset($_SESSION['user_id']) &&
     if(isset($_GET['id'])){
         /*
          Get data from POST request
-         and store them in var 
+         and store it in var 
          **/
-        $name = $_POST['author_name'];
+        $id = $_GET['id'];
       
 
         #simple from Validation
-        if(empty($name)){
-            $em = "The author name is required";
-            header("Location: ../edit-author.php?error=$em&id=$id");
+        if(empty($id)){
+            $em = "Error Occurred!";
+            header("Location: ../admin.php?error=$em");
             exit;
         }else{
             #UPDATE the database
-            $sql  = "UPDATE authors  
+            $sql  = "DELETE authors  
                     SET name=?
                     WHERE id=?";
             $stmt = $conn-> prepare($sql);
