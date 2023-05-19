@@ -239,7 +239,7 @@ if(isset($_SESSION['user_id']) &&
                 #Delete from the server 
                 unlink($c_p_file);
 
-                #Getting the new file name and the new book cover name
+                #Getting the new file name and the new file name
 
                 $book_cover_URL = $book_cover['data'];
 
