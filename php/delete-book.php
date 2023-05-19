@@ -48,6 +48,8 @@ if(isset($_SESSION['user_id']) &&
                 # delete the current book_cover and the file
                 $cover = $the_book['cover'];
                 $file  = $the_book['file'];
+                $c_b_p = "../uploads/cover/$cover";
+
                 # Success message
                 $sm = "Successfully removed !";
                 header("Location: ../admin.php?success=$sm");
