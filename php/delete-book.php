@@ -29,8 +29,9 @@ if(isset($_SESSION['user_id']) &&
                 #GET the Book from database
                 $sql2  = "SELECT * FROM books  
                         WHERE id=?";
-        $stmt2 = $conn-> prepare($sql2);
-        $stmt2-> execute([$id]);
+                $stmt2 = $conn-> prepare($sql2);
+                $stmt2-> execute([$id]);
+                $the_book = $stmt2 -> fetch();
 
        if( $stmt2->rowCount() > 0){
    
@@ -41,9 +42,11 @@ if(isset($_SESSION['user_id']) &&
             $res  = $stmt-> execute([ $id]);
             /*
                 if there is no error while 
-                inserting the data
+                deleting the data
             */ 
             if($res){
+                # delete the current book_cover and the file
+
                 # Success message
                 $sm = "Successfully removed !";
                 header("Location: ../admin.php?success=$sm");
