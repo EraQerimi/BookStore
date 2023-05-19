@@ -27,9 +27,9 @@ if(isset($_SESSION['user_id']) &&
             exit;
         }else{
                 #GET the Book from database
-                $sql  = "DELETE books  
-                SET name=?
-                WHERE id=?";
+                $sql  = "SELECT * FROM books  
+                         SET name=?
+                        WHERE id=?";
         $stmt = $conn-> prepare($sql);
         $res  = $stmt-> execute([$name, $id]);
 
