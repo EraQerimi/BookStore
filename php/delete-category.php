@@ -8,8 +8,8 @@ if(isset($_SESSION['user_id']) &&
         #Database connection file
         include "../db_conn.php";
   
-    /* check if author
-       name is submitted
+    /* check if the book
+       id is submitted
        **/
 
     if(isset($_POST['author_name']) && 
