@@ -49,7 +49,9 @@ if(isset($_SESSION['user_id']) &&
                 $cover = $the_book['cover'];
                 $file  = $the_book['file'];
                 $c_b_c = "../uploads/cover/$cover";
-                $c_f = "../uploads/cover/$cover";
+                $c_f = "../uploads/files/$cover";
+                unlink($c_b_c);
+                
 
                 # Success message
                 $sm = "Successfully removed !";
