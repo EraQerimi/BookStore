@@ -78,7 +78,9 @@ if(isset($_SESSION['user_id']) &&
 
         
         <?php if($books == 0){ ?>
-                empty 
+            <div class="alert alert-warning" role="alert">
+              There is no book in the database
+            </div> 
        <?php } else { ?>
 
        <!-- List of All Books -->
