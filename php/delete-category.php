@@ -9,11 +9,10 @@ if(isset($_SESSION['user_id']) &&
         include "../db_conn.php";
   
     /* check if the book
-       id is submitted
+       id is set
        **/
 
-    if(isset($_POST['author_name']) && 
-       isset($_POST['author_id'])){
+    if(isset($_POST['author_name'])){
         /*
          Get data from POST request
          and store them in var 
