@@ -153,7 +153,11 @@ if(isset($_SESSION['user_id']) &&
     <?php } ?>
         
         <?php if($categories == 0){ ?>
-                empty 
+            <div class="alert alert-warning text-center p-5" role="alert">
+              <img src="img/emptyy.jpg" width="100">  
+              <br>
+              There is no category in the database
+            </div>  
         <?php } else { ?>
         <!-- List of All categories -->
         <h4 class="mt-5" >All Categories</h4>
