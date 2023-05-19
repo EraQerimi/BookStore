@@ -12,13 +12,13 @@ if(isset($_SESSION['user_id']) &&
        id is set
        **/
 
-    if(isset($_POST['author_name'])){
+    if(isset($_GET['id'])){
         /*
          Get data from POST request
          and store them in var 
          **/
         $name = $_POST['author_name'];
-        $id = $_POST['author_id'];
+      
 
         #simple from Validation
         if(empty($name)){
