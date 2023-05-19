@@ -224,7 +224,7 @@ if(isset($_SESSION['user_id']) &&
             **/
             if ($files['status'] == "error") {
 
-                $em = $files['data'];
+                $em = $file['data'];
 
                 /*
                 Redirect to '../edit-book.php' 
