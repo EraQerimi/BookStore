@@ -72,7 +72,9 @@ if(isset($_SESSION['user_id']) &&
         class="form-control" placeholder="Search Book..." aria-label="Search Book..." aria-describedby="basic-addon2">
         <button class="input-group-text 
                  btn btn-primary"
-                 id="basic-addon2">Search</button>
+                 id="basic-addon2">
+                <img src="img/magnifying-glass-sign-search-icon-free-png.webp" width="25">
+            </button>
         </div>
         </form>
         <div class="mt-5"></div>
