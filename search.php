@@ -74,6 +74,13 @@ $key = $_GET['key'];
         Search result for <b><?=$key?></b>
 
         <div class="d-flex">
+            <?php if($books == 0) {  ?>
+                <div class="alert alert-warning text-center p-5" role="alert">
+              <img src="img/emptyy.jpg" width="100">  
+              <br>
+              There is no book in the database
+            </div> 
+                <?php }else{ ?>
             <div class="pdf-list d-flex flex-wrap" >
                 <div class="card m-1" >
                     <img src="uploads/cover/book1.jpg" class="card-img-top" >
@@ -91,6 +98,7 @@ $key = $_GET['key'];
                 </div>
             </div>
         </div>
+        <?php } ?>
     </div>
 </body>
 </html>
