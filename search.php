@@ -1,7 +1,12 @@
 <?php 
 session_start();
 
-$key = $_GET['key']
+if(!isset($_GET['key'])){
+    header("Location: index.php");
+    exit;
+}
+$key = $_GET['key'];
+
 ?>
 
 <!DOCTYPE html>
