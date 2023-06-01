@@ -72,7 +72,7 @@ $key = $_GET['key'];
                     vitality, leaving a lasting impact on readers' hearts and minds.
                     </p>
                     <a href="uploads/files/book1.pdf" class="btn btn-success">Open</a>
-                    <a href="uploads/files/book1.pdf" class="btn btn-success">Open</a>
+                    <a href="uploads/files/book1.pdf" class="btn btn-success" download="The title">Download</a>
                 </div>
             </div>
         </div>
