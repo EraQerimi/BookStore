@@ -1,7 +1,8 @@
 <?php 
 session_start();
 
-if(!isset($_GET['key'])){
+# if search key is not set or empty
+if(!isset($_GET['key']) || empty($_GET['key']) ){
     header("Location: index.php");
     exit;
 }
@@ -21,6 +22,8 @@ $key = $_GET['key'];
 
     <!-- bootstrap js cdn-->
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js "></script>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="conainer">
@@ -53,7 +56,18 @@ $key = $_GET['key'];
                 </div>
             </div>
         </nav>
-Search result for <b><?=$key?></b>
+        Search result for <b><?=$key?></b>
+
+        <div class="d-flex">
+            <div class="pdf-list d-flex flex-wrap" >
+                <div class="card m-1" >
+                    <img src="uploads/cover/book1.jpg" class="card-img-top" >
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
