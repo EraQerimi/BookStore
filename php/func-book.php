@@ -32,7 +32,8 @@ function get_book($con, $id){
 }
 
 # Search books function
-function get_all_books($con){
+function search_books($con, $key){
+   
    $sql  = "SELECT * FROM books ORDER bY id DESC";
    $stmt = $con->prepare($sql);
    $stmt->execute();
