@@ -1,5 +1,7 @@
 <?php 
 session_start();
+
+$key = $
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +48,7 @@ session_start();
                 </div>
             </div>
         </nav>
-
+Search result for <b><?=$key?></b>
     </div>
 </body>
 </html>
