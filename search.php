@@ -88,12 +88,21 @@ $key = $_GET['key'];
                     <img src="uploads/cover/<?=$book['cover']?>" class="card-img-top" >
                 </div>
                 <div class="card-body" >
-                    <h5 class="card-title" >Leaves of Grass</h5>
+                    <h5 class="card-title" >
+                        <?=$book['title']?></h5>
                     <p class="card-text">
-                    "Leaves of Grass" by Walt Whitman is a poetic masterpiece that celebrates 
-                    the beauty of nature and the power of the individual, inviting readers on 
-                    a journey of self-discovery and connection. Whitman's words rustle with 
-                    vitality, leaving a lasting impact on readers' hearts and minds.
+                        <i><b>By: 
+                            <?php
+                            foreach($authors as $author){
+                                    if($author['id'] == 
+                                       $book['author_id']){
+                                        echo $author['name'];
+                                    }
+                                ?>
+
+                            <?php }  ?>
+                        <br></b></i>
+                    <?=$book['description']?>
                     </p>
                     <a href="uploads/files/book1.pdf" class="btn btn-success">Open</a>
                     <a href="uploads/files/book1.pdf" class="btn btn-primary" download="The title">Download</a>
