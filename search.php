@@ -70,15 +70,15 @@ $key = $_GET['key'];
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav><br>
         Search result for <b><?=$key?></b>
 
-        <div class="d-flex">
+        <div class="d-flex pt-3">
             <?php if($books == 0) {  ?>
                 <div class="alert alert-warning text-center p-5 pdf-list" role="alert">
               <img src="img/empty-serach.jpg" width="100">  
               <br>
-              There is no book in the database
+               The key <b>"<?=$key?>"</b> didn't match to any record in the database
             </div> 
                 <?php }else{ ?>
             <div class="pdf-list d-flex flex-wrap" >
