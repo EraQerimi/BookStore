@@ -33,10 +33,13 @@ function get_book($con, $id){
 
 # Search books function
 function search_books($con, $key){
-   
-   $sql  = "SELECT * FROM books ORDER bY id DESC";
+   #creating simple searching algorithm :)
+   $key = "%{$key}%";
+   $sql  = "SELECT * FROM books 
+            WHERE title LIKE ? 
+            OR description LIKE ?";
    $stmt = $con->prepare($sql);
-   $stmt->execute();
+   $stmt->execute([$key, $key]);
 
    if ($stmt->rowCount() > 0) {
    	  $books = $stmt->fetchAll();
