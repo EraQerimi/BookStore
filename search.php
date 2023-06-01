@@ -75,8 +75,8 @@ $key = $_GET['key'];
 
         <div class="d-flex">
             <?php if($books == 0) {  ?>
-                <div class="alert alert-warning text-center p-5" role="alert">
-              <img src="img/emptyy.jpg" width="100">  
+                <div class="alert alert-warning text-center p-5 pdf-list" role="alert">
+              <img src="img/empty-serach.jpg" width="100">  
               <br>
               There is no book in the database
             </div> 
