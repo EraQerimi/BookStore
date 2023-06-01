@@ -71,6 +71,7 @@ $key = $_GET['key'];
                     a journey of self-discovery and connection. Whitman's words rustle with 
                     vitality, leaving a lasting impact on readers' hearts and minds.
                     </p>
+                    <a href="uploads/files/book1.pdf" class="btn btn-success">Open</a>
                 </div>
             </div>
         </div>
