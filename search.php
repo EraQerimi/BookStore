@@ -63,8 +63,14 @@ $key = $_GET['key'];
                 <div class="card m-1" >
                     <img src="uploads/cover/book1.jpg" class="card-img-top" >
                 </div>
-                <div>
-                    
+                <div class="card-body" >
+                    <h5 class="card-title" >Leaves of Grass</h5>
+                    <p class="card-text">
+                    "Leaves of Grass" by Walt Whitman is a poetic masterpiece that celebrates 
+                    the beauty of nature and the power of the individual, inviting readers on 
+                    a journey of self-discovery and connection. Whitman's words rustle with 
+                    vitality, leaving a lasting impact on readers' hearts and minds.
+                    </p>
                 </div>
             </div>
         </div>
