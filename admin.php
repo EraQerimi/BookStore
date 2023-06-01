@@ -70,7 +70,11 @@ if(isset($_SESSION['user_id']) &&
 
          <div class="input-group my-5">   
         <input type="text" 
-        class="form-control" placeholder="Search Book..." aria-label="Search Book..." aria-describedby="basic-addon2">
+        class="form-control" 
+        name="key"
+        placeholder="Search Book..." 
+        aria-label="Search Book..."
+        aria-describedby="basic-addon2">
         <button class="input-group-text 
                  btn btn-primary"
                  id="basic-addon2">
