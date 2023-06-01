@@ -97,6 +97,7 @@ $key = $_GET['key'];
                                     if($author['id'] == 
                                        $book['author_id']){
                                         echo $author['name'];
+                                        break;
                                     }
                                 ?>
 
