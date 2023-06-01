@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-$key = $
+$key = $_GET['key']
 ?>
 
 <!DOCTYPE html>
