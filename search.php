@@ -104,7 +104,7 @@ $key = $_GET['key'];
                             <?php }  ?>
                         <br></b></i>
                     <?=$book['description']?>
-                    <i><b>Category: 
+                    <br><i><b>Category: 
                             <?php
                             foreach($categories as $category){
                                     if($category['id'] == 
@@ -124,6 +124,7 @@ $key = $_GET['key'];
             <?php }?>
         </div>
         <?php } ?>
+    </div>
     </div>
 </body>
 </html>
