@@ -82,8 +82,10 @@ $key = $_GET['key'];
             </div> 
                 <?php }else{ ?>
             <div class="pdf-list d-flex flex-wrap" >
+                <?php 
+                    foreach($books as $book ){ ?>
                 <div class="card m-1" >
-                    <img src="uploads/cover/book1.jpg" class="card-img-top" >
+                    <img src="uploads/cover/<?=$book['cover']?>" class="card-img-top" >
                 </div>
                 <div class="card-body" >
                     <h5 class="card-title" >Leaves of Grass</h5>
@@ -97,6 +99,7 @@ $key = $_GET['key'];
                     <a href="uploads/files/book1.pdf" class="btn btn-primary" download="The title">Download</a>
                 </div>
             </div>
+            <?php }?>
         </div>
         <?php } ?>
     </div>
