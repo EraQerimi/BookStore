@@ -104,6 +104,18 @@ $key = $_GET['key'];
                             <?php }  ?>
                         <br></b></i>
                     <?=$book['description']?>
+                    <i><b>Category: 
+                            <?php
+                            foreach($authors as $author){
+                                    if($author['id'] == 
+                                       $book['author_id']){
+                                        echo $author['name'];
+                                        break;
+                                    }
+                                ?>
+
+                            <?php }  ?>
+                        <br></b></i>
                     </p>
                     <a href="uploads/files/book1.pdf" class="btn btn-success">Open</a>
                     <a href="uploads/files/book1.pdf" class="btn btn-primary" download="The title">Download</a>
