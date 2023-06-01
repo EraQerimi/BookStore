@@ -68,7 +68,7 @@ if(isset($_SESSION['user_id']) &&
               method="get"
               style="width: 100%; max-width: 30rem">
 
-        <div class="input-group my-5">   
+         <div class="input-group my-5">   
         <input type="text" 
         class="form-control" placeholder="Search Book..." aria-label="Search Book..." aria-describedby="basic-addon2">
         <button class="input-group-text 
