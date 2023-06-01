@@ -31,6 +31,11 @@
                             <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
+                            <?php if(isset($_SESSION['user_id']))){
+                               ?>     
+
+                         <?php   }else{ ?>
+                            
                             <a class="nav-link" href="login.php">Login</a>
                         </li>
                     </ul>
