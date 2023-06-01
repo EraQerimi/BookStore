@@ -106,10 +106,10 @@ $key = $_GET['key'];
                     <?=$book['description']?>
                     <i><b>Category: 
                             <?php
-                            foreach($authors as $author){
-                                    if($author['id'] == 
-                                       $book['author_id']){
-                                        echo $author['name'];
+                            foreach($categories as $category){
+                                    if($category['id'] == 
+                                       $book['category_id']){
+                                        echo $category['name'];
                                         break;
                                     }
                                 ?>
