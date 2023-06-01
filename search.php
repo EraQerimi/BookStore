@@ -7,6 +7,21 @@ if(!isset($_GET['key']) || empty($_GET['key']) ){
     exit;
 }
 $key = $_GET['key'];
+    #Database connection file
+    include "db_conn.php";
+    
+    # Book helper function
+    include "php/func-book.php";
+    $books = get_all_books($conn);
+
+    # Author helper function
+    include "php/func-author.php";
+    $authors = get_all_author($conn);
+
+    # Category helper function
+    include "php/func-category.php";
+    $categories = get_all_categories($conn);
+
 
 ?>
 
@@ -72,7 +87,7 @@ $key = $_GET['key'];
                     vitality, leaving a lasting impact on readers' hearts and minds.
                     </p>
                     <a href="uploads/files/book1.pdf" class="btn btn-success">Open</a>
-                    <a href="uploads/files/book1.pdf" class="btn btn-success" download="The title">Download</a>
+                    <a href="uploads/files/book1.pdf" class="btn btn-primary" download="The title">Download</a>
                 </div>
             </div>
         </div>
