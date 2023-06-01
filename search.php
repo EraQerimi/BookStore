@@ -12,7 +12,7 @@ $key = $_GET['key'];
     
     # Book helper function
     include "php/func-book.php";
-    $books = get_all_books($conn);
+    $books = search_books($conn);
 
     # Author helper function
     include "php/func-author.php";
