@@ -64,7 +64,8 @@ if(isset($_SESSION['user_id']) &&
                 </div>
             </div>
         </nav>
-        <form action=""
+        <form action="search.php"
+              method="get"
               style="width: 100%; max-width: 30rem">
 
         <div class="input-group my-5">   
@@ -73,7 +74,8 @@ if(isset($_SESSION['user_id']) &&
         <button class="input-group-text 
                  btn btn-primary"
                  id="basic-addon2">
-                <img src="img/magnifying-glass-sign-search-icon-free-png.webp" width="25">
+                <img src="img/magnifying-glass-sign-search-icon-free-png.webp"
+                          width="25">
             </button>
         </div>
         </form>
