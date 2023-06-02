@@ -139,8 +139,9 @@ session_start();
       <div class="category">
         <!-- List of Categories -->
         <div class="list-group">
-            <a href="#"
-            class="list-group-item list-group-item-action active">Category</a>
+        <a href="#"
+			 class="list-group-item list-group-item-action active"
+             >Category</a>
             <a href="#"
             class="list-group-item list-group-item-action"
             >Name</a>
