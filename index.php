@@ -140,12 +140,16 @@ session_start();
       <div class="category">
         <!-- List of Categories -->
         <div class="list-group ">
+            <?php
+            
+            ?>
         <a href="#"
 			 class="list-group-item list-group-item-action active"
              >Category</a>
-            <a href="#"
-            class="list-group-item list-group-item-action"
-            >Name</a>
+             <?php 
+             foreach($categories as $category){ ?>
+            <a href="#" class="list-group-item list-group-item-action"><?=$category['name']?></a>
+            <?php } ?>
         </div>
       </div>  
     </div>
