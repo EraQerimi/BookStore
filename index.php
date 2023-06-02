@@ -152,7 +152,7 @@ session_start();
             <?php } }?>
         </div>
         <!-- List of Authors -->
-        <div class="list-group ">
+        <div class="list-group mt-5">
             <?php if($authors == 0){
 
             }else{ ?>
