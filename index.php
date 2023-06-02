@@ -87,11 +87,11 @@ session_start();
 
         <div class="d-flex pt-3">
             <?php if($books == 0) {  ?>
-                <div class="alert alert-warning text-center p-5 pdf-list" role="alert">
-              <img src="img/empty-serach.jpg" width="100">  
+                <div class="alert alert-warning text-center p-5" role="alert">
+              <img src="img/emptyy.jpg" width="100">  
               <br>
-               The key <b>"<?=$key?>"</b> didn't match to any record in the database
-            </div> 
+              There is no book in the database
+            </div>
                 <?php }else{ ?>
             <div class="pdf-list d-flex flex-wrap" >
                 <?php 
@@ -136,6 +136,9 @@ session_start();
             <?php }?>
         </div>
         <?php } ?>
+      <div class="category">
+        <!-- List of Categories -->
+      </div>  
     </div>
     </div>
 </body>
