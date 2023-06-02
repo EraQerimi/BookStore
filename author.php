@@ -45,7 +45,7 @@ $categories = get_all_categories($conn);
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="conainer">
+    <div class="container">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">Online Book Store</a>
