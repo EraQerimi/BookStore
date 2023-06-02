@@ -15,7 +15,7 @@ include "db_conn.php";
     
 # Book helper function
 include "php/func-book.php";
-$books = get_books_by_category($conn);
+$books = get_books_by_category($conn, $id);
 
 # Author helper function
 include "php/func-author.php";
