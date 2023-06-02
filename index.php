@@ -153,15 +153,15 @@ session_start();
         </div>
         <!-- List of Authors -->
         <div class="list-group ">
-            <?php if($categories == 0){
+            <?php if($authors == 0){
 
             }else{ ?>
         <a href="#"
 			 class="list-group-item list-group-item-action active"
-             >Category</a>
+             >Author</a>
              <?php 
-             foreach($categories as $category){ ?>
-            <a href="#" class="list-group-item list-group-item-action"><?=$category['name']?></a>
+             foreach($authors as $author){ ?>
+            <a href="#" class="list-group-item list-group-item-action"><?=$author['name']?></a>
             <?php } }?>
         </div>
 
