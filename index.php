@@ -4,9 +4,9 @@ session_start();
     #Database connection file
     include "db_conn.php";
     
-    # Book helper function
+   # Book helper function
     include "php/func-book.php";
-    $books = search_books($conn, $key);
+    $books = get_all_books($conn);
 
     # Author helper function
     include "php/func-author.php";
