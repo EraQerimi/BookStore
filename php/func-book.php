@@ -58,10 +58,10 @@ function get_books_by_category($con, $id){
    $stmt->execute([$id]);
 
    if ($stmt->rowCount() > 0) {
-   	  $book = $stmt->fetch();
+   	  $books = $stmt->fetchAll();
    }else {
-      $book = 0;
+      $books = 0;
    }
 
-   return $book;
+   return $books;
 }
