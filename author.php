@@ -1,13 +1,13 @@
 <?php 
 session_start();
 
-#If not category ID is set
+#If not author ID is set
 if (!isset($_GET['id'])){
     header("Location: index.php");
     exit;
 }
 
-#Get category ID from GET request
+#Get author ID from GET request
 $id = $_GET['id'];
 
 #Database connection file
