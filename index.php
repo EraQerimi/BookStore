@@ -140,17 +140,31 @@ session_start();
       <div class="category">
         <!-- List of Categories -->
         <div class="list-group ">
-            <?php
-            
-            ?>
+            <?php if($categories == 0){
+
+            }else{ ?>
+            <a href="#"
+			 class="list-group-item list-group-item-action active"
+             >Category</a>
+             <?php 
+             foreach($categories as $category){ ?>
+            <a href="#" class="list-group-item list-group-item-action"><?=$category['name']?></a>
+            <?php } }?>
+        </div>
+        <!-- List of Authors -->
+        <div class="list-group ">
+            <?php if($categories == 0){
+
+            }else{ ?>
         <a href="#"
 			 class="list-group-item list-group-item-action active"
              >Category</a>
              <?php 
              foreach($categories as $category){ ?>
             <a href="#" class="list-group-item list-group-item-action"><?=$category['name']?></a>
-            <?php } ?>
+            <?php } }?>
         </div>
+
       </div>  
     </div>
     </div>
