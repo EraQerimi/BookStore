@@ -146,9 +146,9 @@ session_start();
             <a href="#"
 			 class="list-group-item list-group-item-action active"
              >Category</a>
-             <?php 
-             foreach($categories as $category){ ?>
-            <a href="#" class="list-group-item list-group-item-action"><?=$category['name']?></a>
+             <?php foreach($categories as $category){ ?>
+            <a href="category.php?id=<?=$category['id']?>" 
+            class="list-group-item list-group-item-action"><?=$category['name']?></a>
             <?php } }?>
         </div>
         <!-- List of Authors -->
