@@ -24,7 +24,7 @@ $authors = get_all_author($conn);
 # Category helper function
 include "php/func-category.php";
 $categories = get_all_categories($conn);
-$current_categories = get_category($conn);
+$current_category = get_category($conn, $id);
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ $current_categories = get_category($conn);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Store</title>
+    <title><?=$current_category['name'] ?></title>
      <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
 
@@ -78,7 +78,7 @@ $current_categories = get_category($conn);
         class="nd">
             <img src="img/arrow.png" width="35">
         </a>
-        Programming
+        <?=$current_category['name'] ?>
     </h1>
 
         <div class="d-flex pt-3">
