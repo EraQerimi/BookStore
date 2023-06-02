@@ -1,3 +1,24 @@
+<?php 
+session_start();
+
+    #Database connection file
+    include "db_conn.php";
+    
+    # Book helper function
+    include "php/func-book.php";
+    $books = search_books($conn, $key);
+
+    # Author helper function
+    include "php/func-author.php";
+    $authors = get_all_author($conn);
+
+    # Category helper function
+    include "php/func-category.php";
+    $categories = get_all_categories($conn);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +31,14 @@
 
     <!-- bootstrap js cdn-->
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js "></script>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="conainer">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Online Book Store</a>
+                <a class="navbar-brand" href="index.php">Online Book Store</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,13 +54,71 @@
                             <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
+                            <?php if(isset($_SESSION['user_id'])){
+                               ?> 
+                               <a class="nav-link" href="admin.php">Admin</a>
+                               <?php }else{?>
+                                <a class="nav-link" href="login.php">Login</a>
+                                <?php } ?>     
                         </li>
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav><br>
+        Search result for <b><?=$key?></b>
 
+        <div class="d-flex pt-3">
+            <?php if($books == 0) {  ?>
+                <div class="alert alert-warning text-center p-5 pdf-list" role="alert">
+              <img src="img/empty-serach.jpg" width="100">  
+              <br>
+               The key <b>"<?=$key?>"</b> didn't match to any record in the database
+            </div> 
+                <?php }else{ ?>
+            <div class="pdf-list d-flex flex-wrap" >
+                <?php 
+                    foreach($books as $book ){ ?>
+                <div class="card m-1" >
+                    <img src="uploads/cover/<?=$book['cover']?>" class="card-img-top" >
+                </div>
+                <div class="card-body" >
+                    <h5 class="card-title" >
+                        <?=$book['title']?></h5>
+                    <p class="card-text">
+                        <i><b>By: 
+                            <?php
+                            foreach($authors as $author){
+                                    if($author['id'] == 
+                                       $book['author_id']){
+                                        echo $author['name'];
+                                        break;
+                                    }
+                                ?>
+
+                            <?php }  ?>
+                        <br></b></i>
+                    <?=$book['description']?>
+                    <br><i><b>Category: 
+                            <?php
+                            foreach($categories as $category){
+                                    if($category['id'] == 
+                                       $book['category_id']){
+                                        echo $category['name'];
+                                        break;
+                                    }
+                                ?>
+
+                            <?php }  ?>
+                        <br></b></i>
+                    </p>
+                    <a href="uploads/files/<?=$book['file']?>" class="btn btn-success">Open</a>
+                    <a href="uploads/files/<?=$book['file']?>" class="btn btn-primary" download="<?=$book['title']?>">Download</a>
+                </div>
+            </div>
+            <?php }?>
+        </div>
+        <?php } ?>
+    </div>
     </div>
 </body>
 </html>
