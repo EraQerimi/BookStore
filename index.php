@@ -161,7 +161,8 @@ session_start();
              >Author</a>
              <?php 
              foreach($authors as $author){ ?>
-            <a href="#" class="list-group-item list-group-item-action"><?=$author['name']?></a>
+            <a href="author.php?id=<?=$author['id']?>" 
+            class="list-group-item list-group-item-action"><?=$author['name']?></a>
             <?php } }?>
         </div>
 
