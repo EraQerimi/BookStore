@@ -64,8 +64,26 @@ session_start();
                     </ul>
                 </div>
             </div>
-        </nav><br>
-        Search result for <b><?=$key?></b>
+        </nav>
+        <form action="search.php"
+              method="get"
+              style="width: 100%; max-width: 30rem">
+
+         <div class="input-group my-5">   
+        <input type="text" 
+        class="form-control" 
+        name="key"
+        placeholder="Search Book..." 
+        aria-label="Search Book..."
+        aria-describedby="basic-addon2">
+        <button class="input-group-text 
+                 btn btn-primary"
+                 id="basic-addon2">
+                <img src="img/magnifying-glass-sign-search-icon-free-png.webp"
+                          width="25">
+            </button>
+        </div>
+        </form>
 
         <div class="d-flex pt-3">
             <?php if($books == 0) {  ?>
