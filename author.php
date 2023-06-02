@@ -17,14 +17,16 @@ include "db_conn.php";
 include "php/func-book.php";
 $books = get_books_by_author($conn, $id);
 
+
 # Author helper function
 include "php/func-author.php";
 $authors = get_all_author($conn);
+$current_author = get_author($conn, $id);
+
 
 # Category helper function
 include "php/func-category.php";
 $categories = get_all_categories($conn);
-$current_category = get_category($conn, $id);
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +35,7 @@ $current_category = get_category($conn, $id);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?=$current_category['name'] ?></title>
+    <title><?=$current_author['name'] ?></title>
      <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
 
@@ -78,7 +80,7 @@ $current_category = get_category($conn, $id);
         class="nd">
             <img src="img/arrow.png" width="35">
         </a>
-        <?=$current_category['name'] ?>
+        <?=$current_author['name'] ?>
     </h1>
 
         <div class="d-flex pt-3">
