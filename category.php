@@ -73,7 +73,13 @@ $categories = get_all_categories($conn);
                 </div>
             </div>
         </nav>
-      <h1 class="display-4 p-3 fs-3"> <a href="index.php"><img src="img/arrow.png" width="35"></a></h1>
+      <h1 class="display-4 p-3 fs-3"> 
+        <a href="index.php"
+        class="nd">
+            <img src="img/arrow.png" width="35">
+        </a>
+        Programming
+    </h1>
 
         <div class="d-flex pt-3">
             <?php if($books == 0) {  ?>
