@@ -24,7 +24,7 @@ $authors = get_all_author($conn);
 # Category helper function
 include "php/func-category.php";
 $categories = get_all_categories($conn);
-
+$current_categories = get_category($conn);
 ?>
 
 <!DOCTYPE html>
