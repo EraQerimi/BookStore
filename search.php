@@ -117,8 +117,8 @@ $key = $_GET['key'];
                             <?php }  ?>
                         <br></b></i>
                     </p>
-                    <a href="uploads/files/book1.pdf" class="btn btn-success">Open</a>
-                    <a href="uploads/files/book1.pdf" class="btn btn-primary" download="The title">Download</a>
+                    <a href="uploads/files/<?=$book['file']?>" class="btn btn-success">Open</a>
+                    <a href="uploads/files/<?=$book['file']?>" class="btn btn-primary" download="<?=$book['title']?>">Download</a>
                 </div>
             </div>
             <?php }?>
