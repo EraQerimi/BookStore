@@ -136,9 +136,10 @@ session_start();
             <?php }?>
         </div>
         <?php } ?>
+
       <div class="category">
         <!-- List of Categories -->
-        <div class="list-group">
+        <div class="list-group ">
         <a href="#"
 			 class="list-group-item list-group-item-action active"
              >Category</a>
