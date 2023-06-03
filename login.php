@@ -62,3 +62,8 @@ if(!isset($_SESSION['user_id']) &&
         
 </body>
 </html>
+
+<?php }else{
+    header("Location: admin.php");
+    exit;
+} ?>
