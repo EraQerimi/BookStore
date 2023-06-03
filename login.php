@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+#if the admin is logged in
+if(!isset($_SESSION['user_id']) &&
+   !isset($_SESSION['user_email'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
