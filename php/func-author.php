@@ -13,11 +13,10 @@ function get_all_author($con){
    }
 
    return $authors;
-
 }
 
-#Get author by ID function
 
+# Get  Author by ID function
 function get_author($con, $id){
    $sql  = "SELECT * FROM authors WHERE id=?";
    $stmt = $con->prepare($sql);
@@ -30,5 +29,4 @@ function get_author($con, $id){
    }
 
    return $author;
-
 }

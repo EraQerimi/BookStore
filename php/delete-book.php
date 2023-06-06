@@ -12,7 +12,7 @@ if (isset($_SESSION['user_id']) &&
     /*
 	  check if the book 
 	  id set
-	*/
+	**/
 	if (isset($_GET['id'])) {
 		/*
 		Get data from GET request 
@@ -43,7 +43,7 @@ if (isset($_SESSION['user_id']) &&
 				/*
 			      If there is no error while 
 			      Deleting the data
-			    */
+			    **/
 			     if ($res) {
 			     	# delete the current book_cover and the file
                     $cover = $the_book['cover'];

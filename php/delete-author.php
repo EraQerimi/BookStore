@@ -14,7 +14,7 @@ if (isset($_SESSION['user_id']) &&
 	  id set
 	**/
 	if (isset($_GET['id'])) {
-		/* 
+		/*
 		Get data from GET request 
 		and store it in var
 		**/
@@ -26,26 +26,21 @@ if (isset($_SESSION['user_id']) &&
 			header("Location: ../admin.php?error=$em");
             exit;
 		}else {
-           
-                # DELETE the category from Database
-				$sql  = "DELETE FROM authors
-				         WHERE id=?";
-				$stmt = $conn->prepare($sql);
-				$res  = $stmt->execute([$id]);
+            # DELETE the category from Database
+			$sql  = "DELETE FROM authors
+			         WHERE id=?";
+			$stmt = $conn->prepare($sql);
+			$res  = $stmt->execute([$id]);
 
-				/*
-			      If there is no error while 
-			      Deleting the data
-			    */
-			     if ($res) {
-			  
-
-
-			     	# success message
-			     	$sm = "Successfully removed!";
-					header("Location: ../admin.php?success=$sm");
-		            exit;
-			    
+			/*
+		      If there is no error while 
+		      Deleting the data
+		    **/
+		     if ($res) {
+		     	# success message
+		     	$sm = "Successfully removed!";
+				header("Location: ../admin.php?success=$sm");
+	            exit;
 			 }else {
 			 	$em = "Error Occurred!";
 			    header("Location: ../admin.php?error=$em");

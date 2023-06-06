@@ -1,4 +1,4 @@
-<?php 
+<?php  
 
 # Get all Categories function
 function get_all_categories($con){
@@ -15,7 +15,8 @@ function get_all_categories($con){
    return $categories;
 }
 
-#Get category by id
+
+# Get category by ID
 function get_category($con, $id){
    $sql  = "SELECT * FROM categories WHERE id=?";
    $stmt = $con->prepare($sql);

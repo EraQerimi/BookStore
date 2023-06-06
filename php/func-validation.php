@@ -11,6 +11,4 @@ function is_empty($var, $text, $location, $ms, $data){
 }
 
 
-
-
 ?>
