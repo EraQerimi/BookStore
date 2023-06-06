@@ -9,12 +9,12 @@ if (isset($_SESSION['user_id']) &&
 	include "../db_conn.php";
 
 
-    /*
+    /* 
 	  check if author 
 	  name is submitted
 	**/
 	if (isset($_POST['author_name'])) {
-		/*
+		/* 
 		Get data from POST request 
 		and store it in var
 		**/
