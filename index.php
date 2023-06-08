@@ -51,11 +51,11 @@ $categories = get_all_categories($conn);
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="#">Contact</a>
+		             href="Contact.php">Contact</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="#">About</a>
+		             href="About.php">About</a>
 		        </li>
 		        <li class="nav-item">
 		          <?php if (isset($_SESSION['user_id'])) {?>
