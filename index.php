@@ -55,7 +55,7 @@ $categories = get_all_categories($conn);
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="About.php">About</a>
+		             href="About.html">About</a>
 		        </li>
 		        <li class="nav-item">
 		          <?php if (isset($_SESSION['user_id'])) {?>
