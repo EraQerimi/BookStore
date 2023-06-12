@@ -51,7 +51,7 @@ $categories = get_all_categories($conn);
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="Contact.php">Contact</a>
+		             href="Contact.html">Contact</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
