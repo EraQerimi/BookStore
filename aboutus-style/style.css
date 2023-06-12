@@ -89,26 +89,30 @@ h1, h2 {
   border-radius: 5px;
 }
 
-.about-item.who {
-  background: url("https://source.unsplash.com/random");
+
+
+.div1{
+  display: block;
+  background-position: center;
+  background-size: cover;
+
+}
+
+.div2{
+
   display: block;
   background-position: center;
   background-size: cover;
 }
 
-.about-item.process {
-  background: url("https://source.unsplash.com/daily");
+.div3{
+
   display: block;
   background-position: center;
   background-size: cover;
 }
 
-.about-item.contact {
-  background: url("https://source.unsplash.com/weekly");
-  display: block;
-  background-position: center;
-  background-size: cover;
-}
+
 
 .about-item:nth-of-type(even) {
   margin: 30px;
