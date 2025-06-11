@@ -1,4 +1,11 @@
 <?php 
+
+require_once 'php/utils.php';
+
+echo "Add Test: " . add(2, 3) . "<br>";          // Outputs 5
+echo "Subtract Test: " . subtract("a", 3);       // Outputs nothing (null)
+
+
 session_start();
 
 # Database Connection File
